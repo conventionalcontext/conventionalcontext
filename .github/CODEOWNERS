@@ -1,0 +1,4 @@
+# Every file is owned by the maintainers team. With "Require review from
+# Code Owners" in the protect-main ruleset, a pull request needs approval
+# from a member of this team before it can merge.
+* @conventionalcontext/maintainers
