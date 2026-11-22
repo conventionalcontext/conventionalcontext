@@ -30,6 +30,11 @@ Notable changes to Conventional Context. The format follows
 - `examples/techdocs/`: a minimal `mkdocs.yml` and `catalog-info.yaml` for
   publishing `docs/context/` with Backstage TechDocs, tested with
   `mkdocs-techdocs-core`.
+- This repository's own `docs/context/` and OpenSpec setup, written with
+  its own schema in the `inception` change: requirements, constraints C-001
+  to C-008, architecture, decisions 0001 to 0009, glossary, roadmap, and
+  specs for the `inception`, `change-review`, and `docs-context-format`
+  capabilities.
 - Website for conventionalcontext.org in `docs/website/` (Zensical, the
   blue-to-teal theme from the earlier version): quick summary, how it works,
   and contribute pages, with `.github/workflows/website.yml` to build it and

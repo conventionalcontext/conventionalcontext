@@ -25,13 +25,18 @@ This repository uses its own schema. Its intent is in
 [`docs/context/`](https://github.com/conventionalcontext/conventionalcontext/tree/main/docs/context),
 and its behavior specs are in `openspec/specs/`.
 
-1. **Open an issue** for anything beyond a small fix, so it can be discussed
+1. **Set up OpenSpec** for your agent: install
+   [OpenSpec](https://github.com/Fission-AI/OpenSpec) and run
+   `openspec init --tools <your agent>` in your clone (for example
+   `claude`, `github-copilot`, or `antigravity`). It installs OpenSpec's
+   skills for your agent; they are not committed to the repository.
+2. **Open an issue** for anything beyond a small fix, so it can be discussed
    first.
-2. **Propose the change with OpenSpec** (`/openspec-propose`), so it is
+3. **Propose the change with OpenSpec** (`/openspec-propose`), so it is
    checked against the project's constraints and decisions.
-3. **Add a line to `CHANGELOG.md`** under `Unreleased`
+4. **Add a line to `CHANGELOG.md`** under `Unreleased`
    ([Keep a Changelog](https://keepachangelog.com/en/1.1.0/)).
-4. **Write commit messages** in
+5. **Write commit messages** in
    [Conventional Commits](https://www.conventionalcommits.org/) form.
 
 Every pull request is reviewed and approved by a maintainer before it

@@ -14,6 +14,9 @@ Instructions for AI coding agents working on this repository.
   (status `superseded`) to `decisions/archive/NNNN-title-YYYY-MM-DD.md`,
   then update the original in place and list the archived version under
   `## Previous decisions`.
+- This repository uses its own schema: propose changes with OpenSpec
+  (`openspec/changes/`). Agent skills come from `openspec init` and are not
+  committed (`.agents/` and `.claude/` are ignored).
 - Run Python tooling with `uv`, never `pip`.
 - Commit messages follow
   [Conventional Commits](https://www.conventionalcommits.org/). Record
