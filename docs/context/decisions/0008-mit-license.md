@@ -9,7 +9,7 @@ decision-makers: andreouellet, Hamed Minaee
 
 ## Context and Problem Statement
 
-The `alpha` branch licensed parts differently (CC-BY-4.0, CC0-1.0,
+The previous version (tag `archive/cc-spec`) licensed parts differently (CC-BY-4.0, CC0-1.0,
 Apache-2.0). Adopters copy the schema and templates into their own
 repositories, and OpenSpec is MIT-licensed.
 

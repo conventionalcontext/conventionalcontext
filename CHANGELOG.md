@@ -6,6 +6,9 @@ Notable changes to Conventional Context. The format follows
 
 ## Unreleased
 
+0.x versions are an MVP: the schema and templates may still change in any
+release. 1.0.0 comes when they are stable and used by real projects.
+
 ### Changed
 
 - New direction: Conventional Context is now an OpenSpec schema plus the
@@ -39,3 +42,14 @@ Notable changes to Conventional Context. The format follows
   blue-to-teal theme from the earlier version): quick summary, how it works,
   and contribute pages, with `.github/workflows/website.yml` to build it and
   deploy it to GitHub Pages.
+
+## History
+
+Earlier attempts, kept as tags for reference. They are not releases.
+
+- [`archive/cc-spec`](https://github.com/conventionalcontext/conventionalcontext/tree/archive/cc-spec): Conventional Context as a
+  standalone specification, with its own specification text, `AGENTS.md`
+  routing, and website (October to November 2026). Replaced by the OpenSpec
+  schema ([decision 0001](docs/context/decisions/0001-extend-openspec-with-a-schema.md)).
+- [`archive/harc`](https://github.com/conventionalcontext/conventionalcontext/tree/archive/harc): HARC (Human Agentic Readable Context),
+  the framework Conventional Context grew out of.
