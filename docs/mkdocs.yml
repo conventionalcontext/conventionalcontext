@@ -1,0 +1,56 @@
+# =============================================================================
+# docs/mkdocs.yml — HARC Framework Documentation Site
+# =============================================================================
+# PURPOSE:
+#   Configures MkDocs to build the HARC Framework documentation site.
+#   This is published to GitHub Pages and serves as the public-facing
+#   documentation for the framework itself.
+#
+# NOTE: This is NOT the Backstage TechDocs template. The template that gets
+#   bootstrapped into user repos lives in templates/docs/mkdocs.yml.
+#
+# LOCAL DEVELOPMENT:
+#   pip install mkdocs-material
+#   mkdocs serve -f docs/mkdocs.yml
+#
+# PUBLISHING:
+#   mkdocs gh-deploy -f docs/mkdocs.yml
+#   Or via GitHub Actions on push to main.
+# =============================================================================
+
+site_name: "HARC Framework"
+site_description: "Human Agentic Readable Context — Give AI coding assistants the context they need."
+site_url: https://opencpk.github.io/aipk-framework-harc/
+
+theme:
+  name: material
+  features:
+    - navigation.sections
+    - navigation.expand
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+
+plugins:
+  - search
+
+nav:
+  - Home: index.md
+  - Getting Started: getting-started.md
+  - HARC Guide: harc-guide.md
+  - Context Files:
+    - Requirements: context/requirements.md
+    - Architecture: context/architecture.md
+    - Constraints: context/constraints.md
+    - Glossary: context/glossary.md
+    - Roadmap: context/roadmap.md
+  - Decisions:
+    - ADR-0001 — Framework Adoption: context/decisions/0001-harc-framework-adoption.md
+    - ADR-0002 — In-Git Ticket System: context/decisions/0002-in-git-ticket-system.md
+    - ADR-0003 — AI Instruction Sync: context/decisions/0003-ai-instruction-sync.md
+    - ADR-0004 — OpenCode Support: context/decisions/0004-opencode-support.md
+    - ADR-0005 — HARC vs Spec Kit vs BMAD: context/decisions/0005-harc-vs-spec-kit-comparison.md
+    - ADR-0006 — HARC Spec Kit Extension: context/decisions/0006-harc-spec-kit-extension.md
+  - Features:
+    - Ticket System: context/features/ticket-system.md
+    - Spec Kit Interoperability: context/features/spec-kit-interoperability.md

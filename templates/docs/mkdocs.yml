@@ -1,0 +1,52 @@
+# =============================================================================
+# docs/mkdocs.yml — Backstage TechDocs Configuration
+# =============================================================================
+# PURPOSE:
+#   Configures how Backstage renders this component's documentation in the
+#   Internal Developer Portal (IDP). The nav section maps docs/context/ files
+#   into a browsable TechDocs site — the SAME source files, no duplication.
+#
+# HOW BACKSTAGE USES THIS:
+#   The catalog-info.yaml annotation "backstage.io/techdocs-ref: dir:."
+#   tells Backstage to look for mkdocs.yml in this directory and render it.
+#
+# HOW TO MAINTAIN:
+#   - Update site_name when the service is renamed
+#   - Add nav entries when new docs/context/ files are created
+#   - The paths in nav are relative to the docs/ directory
+#     (use "../" to reference docs/context/ which is one level up)
+#
+# DOCS: https://backstage.io/docs/features/techdocs/
+# =============================================================================
+
+site_name: "[PLACEHOLDER — Service Name] Documentation"
+site_description: "[PLACEHOLDER — One sentence describing this service]"
+
+# ── Theme ─────────────────────────────────────────────────────────────────
+# Backstage overrides MkDocs themes with its own renderer.
+# Keep this as "material" — it is the Backstage-compatible base.
+theme:
+  name: material
+
+# ── Plugins ───────────────────────────────────────────────────────────────
+plugins:
+  - techdocs-core     # Required by Backstage — do not remove
+
+# ── Navigation ────────────────────────────────────────────────────────────
+# Map your docs/context/ files into a human-readable structure.
+# Paths are relative to this file (docs/), so "../docs/context/" goes up one level.
+nav:
+  - Overview: index.md
+  - Requirements: ../docs/context/requirements.md
+  - Architecture: ../docs/context/architecture.md
+  - Constraints: ../docs/context/constraints.md
+  - Decisions:
+    - Overview: ../docs/context/decisions/0001-example-decision.md
+    # Add new ADRs here as you create them:
+    # - "ADR-0002: [title]": ../docs/context/decisions/0002-title.md
+  - Features:
+    - Example Feature: ../docs/context/features/example-feature.md
+    # Add new features here as you create them:
+    # - "[Feature Name]": ../docs/context/features/[feature-name].md
+  - Glossary: ../docs/context/glossary.md
+  - Development Guide: development.md

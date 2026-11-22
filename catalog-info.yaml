@@ -1,0 +1,78 @@
+# =============================================================================
+# catalog-info.yaml — Backstage Component Descriptor
+# =============================================================================
+# PURPOSE:
+#   Registers this service in the Backstage software catalog. Backstage reads
+#   this file to build the service dependency graph, surface ownership,
+#   render TechDocs, and run scorecards.
+#
+# HOW TO MAINTAIN:
+#   - Update "owner" when the owning team changes
+#   - Update "lifecycle" when the service moves from experimental to production
+#   - Keep "dependsOn" current — stale dependencies break the catalog graph
+#   - Update "providesApis" when new API contracts are published
+#
+# REQUIRED ANNOTATIONS:
+#   backstage.io/techdocs-ref   — tells Backstage to render docs/ as TechDocs
+#   claude.ai/context-path      — tells Claude Code where context files live
+#   claude.ai/entry-point       — tells Claude Code which file to read first
+# =============================================================================
+
+apiVersion: backstage.io/v1alpha1
+kind: Component
+
+metadata:
+  # ── Identity ──────────────────────────────────────────────────────────────
+  name: aipk-framework-harc
+  title: HARC Framework
+  description: >
+    Human Agentic Readable Context — a framework for structuring
+    AI-accessible project context in git repositories. Provides standard
+    layouts for requirements, architecture, decisions, and constraints
+    readable by Claude Code, GitHub Copilot, and OpenCode.
+
+  # ── Annotations ───────────────────────────────────────────────────────────
+  annotations:
+    # Backstage: source code location
+    github.com/project-slug: opencpk/aipk-framework-harc
+
+    # Backstage: render the docs/ directory as TechDocs in the IDP portal
+    backstage.io/techdocs-ref: dir:.
+
+    # Claude Code: where to find context files in this repo
+    claude.ai/context-path: docs/context/
+
+    # Claude Code: the first file to read at the start of a session
+    claude.ai/entry-point: CLAUDE.md
+
+  # ── Taxonomy tags (used for catalog filtering) ────────────────────────────
+  tags:
+    - markdown
+    - shell
+    - framework
+    - ai-context
+    - platform-engineering
+    - developer-experience
+
+  # ── External links ────────────────────────────────────────────────────────
+  links:
+    - url: https://opencpk.github.io/aipk-framework-harc/
+      title: Documentation Site
+      icon: docs
+    - url: https://github.com/opencpk/aipk-framework-harc
+      title: GitHub Repository
+      icon: github
+
+spec:
+  # ── Classification ────────────────────────────────────────────────────────
+  type: documentation
+  lifecycle: experimental
+
+  # ── Ownership ─────────────────────────────────────────────────────────────
+  owner: group:example-group
+
+  # ── Custom Fields ─────────────────────────────────────────────────────────
+  # Project-specific properties readable by Backstage plugins, scorecards,
+  # and other integrations. Add fields as needed for your workflow.
+  custom1: CustomA
+  custom2: CustomB
