@@ -1,0 +1,6 @@
+# Every file is owned by the maintainers team. With "Require review from
+# Code Owners" in the protect-main ruleset, a pull request needs approval
+# from a member of this team other than its author before it can merge
+# (constraint C-008). Team membership is managed in Pulumi, in the
+# conventionalcontext-project-mgmt repository (iac/github).
+* @conventionalcontext/maintainers
