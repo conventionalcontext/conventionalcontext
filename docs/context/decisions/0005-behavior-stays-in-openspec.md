@@ -10,7 +10,7 @@ decision-makers: andreouellet, Hamed Minaee
 ## Context and Problem Statement
 
 OpenSpec keeps the current behavior of a system in `openspec/specs/` and
-work in progress in `openspec/changes/`. The `alpha` approach also had
+work in progress in `openspec/changes/`. The previous version (tag `archive/cc-spec`) also had
 `features/` and functional requirements in `docs/context/`. What belongs
 where?
 

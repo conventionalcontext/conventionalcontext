@@ -9,7 +9,8 @@ decision-makers: andreouellet, Hamed Minaee
 
 ## Context and Problem Statement
 
-The first version of Conventional Context (kept on the `alpha` branch) was a
+Conventional Context grew out of HARC, an earlier framework (tag
+`archive/harc`). Its previous version (tag `archive/cc-spec`) was a
 standalone specification for `docs/context/`, with its own versioned text,
 agent routing, and feature files. Research in November 2026 showed that
 spec-driven development tools already cover much of it: Spec Kit's community
@@ -21,7 +22,7 @@ Conventional Context add what these tools lack without competing with them?
 ## Considered Options
 
 * Extend OpenSpec with a schema
-* Standalone specification (the `alpha` approach)
+* Standalone specification (the `archive/cc-spec` approach)
 * Fork OpenSpec or Spec Kit
 * Contribute the features upstream to OpenSpec or Spec Kit
 
@@ -41,4 +42,6 @@ Chosen option: "Extend OpenSpec with a schema", because a schema is OpenSpec's s
 ## More Information
 
 * OpenSpec: <https://github.com/Fission-AI/OpenSpec>
-* Earlier approach: the `alpha` branch of this repository
+* Earlier versions, kept as tags in this repository:
+  [`archive/harc`](https://github.com/conventionalcontext/conventionalcontext/tree/archive/harc) (HARC) and
+  [`archive/cc-spec`](https://github.com/conventionalcontext/conventionalcontext/tree/archive/cc-spec) (standalone specification)

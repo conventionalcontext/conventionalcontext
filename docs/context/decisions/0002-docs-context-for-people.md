@@ -9,7 +9,7 @@ decision-makers: andreouellet, Hamed Minaee
 
 ## Context and Problem Statement
 
-The `alpha` approach told every agent, through `AGENTS.md`, to read
+The previous version (tag `archive/cc-spec`) told every agent, through `AGENTS.md`, to read
 `docs/context/` before any task. Studies of repository context files found
 that they do not improve agents' task success and raise cost by more than
 20% (Gloaguen et al., 2026), that context strategy does not measurably
