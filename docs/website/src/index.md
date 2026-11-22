@@ -49,6 +49,11 @@ in the creator's head, or in an agent session only they can see.
 | Build, Test | The code and its tests | The agent, reviewed by a person |
 | Deploy | Ship it | CI/CD |
 
+Each stage builds on the one before it. Conventional Context makes the
+Intent stage explicit and reviewable, then feeds it forward: OpenSpec's
+proposals and specs for every change are written after it, and checked
+against its constraints and decisions.
+
 ## How it works
 
 1. **Inception.** Your first OpenSpec change uses the `conventional-context`
@@ -88,9 +93,17 @@ The schema is being written and is not released yet. The intended setup:
 
 1. Install [OpenSpec](https://github.com/Fission-AI/OpenSpec) and run
    `openspec init` in your repository.
-2. Copy `schema/conventional-context/` from the
-   [repository](https://github.com/conventionalcontext/conventionalcontext)
-   into `openspec/schemas/conventional-context/`.
+2. Copy the schema folder, `openspec/schemas/conventional-context/`, from
+   the [repository](https://github.com/conventionalcontext/conventionalcontext)
+   into the same path in yours, and commit it. Once `v0.1.0` is tagged:
+
+   ```bash
+   mkdir -p openspec/schemas && curl -fsSL \
+     https://github.com/conventionalcontext/conventionalcontext/archive/refs/tags/v0.1.0.tar.gz \
+     | tar -xz --strip-components=3 -C openspec/schemas \
+       conventionalcontext-0.1.0/openspec/schemas/conventional-context
+   ```
+
 3. Set `schema: conventional-context` in `openspec/config.yaml`.
 4. Ask your agent to propose the first change, for example
    `/openspec-propose inception`, and review `docs/context/` before you build.

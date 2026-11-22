@@ -89,13 +89,24 @@ only what holds today.
 
 ## Getting started
 
-Not released yet. The intended setup:
+Not released yet. Once `v0.1.0` is tagged:
 
 1. Install OpenSpec and run `openspec init` in your repository.
-2. Copy `schema/conventional-context/` from this repository into
-   `openspec/schemas/conventional-context/`. It holds the schema, its
-   artifact templates, and the `docs/context/` templates (`docs-context/`)
-   that the first change fills in.
+2. Copy the schema folder, `openspec/schemas/conventional-context/`, from
+   this repository into the same path in yours, and commit it. It holds the
+   schema, its artifact templates, and the `docs/context/` templates
+   (`docs-context/`) that the first change fills in. From a release:
+
+   ```bash
+   mkdir -p openspec/schemas && curl -fsSL \
+     https://github.com/conventionalcontext/conventionalcontext/archive/refs/tags/v0.1.0.tar.gz \
+     | tar -xz --strip-components=3 -C openspec/schemas \
+       conventionalcontext-0.1.0/openspec/schemas/conventional-context
+   ```
+
+   To try it on every project on your machine instead, put the same folder
+   in `~/.local/share/openspec/schemas/`. Committing it to the project is
+   better for teams and CI.
 3. Set `schema: conventional-context` in `openspec/config.yaml`.
 4. Ask your agent to propose the first change, for example
    `/openspec-propose inception`, and review `docs/context/` before you build.

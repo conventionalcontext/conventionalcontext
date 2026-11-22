@@ -21,7 +21,7 @@ Notable changes to Conventional Context. The format follows
 - `docs/context/` templates (structure and guidance, no content): index,
   requirements, constraints, architecture, glossary, roadmap, and a MADR 4
   decision template. They ship inside the schema, in
-  `schema/conventional-context/docs-context/`.
+  `openspec/schemas/conventional-context/docs-context/`.
 - OpenSpec schema `conventional-context`: OpenSpec's `spec-driven` workflow
   plus a `context` artifact (proposal → context → specs → design → tasks).
   At inception it writes `docs/context/` with the user; on later changes it
