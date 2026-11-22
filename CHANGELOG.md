@@ -26,3 +26,6 @@ Notable changes to Conventional Context. The format follows
   At inception it writes `docs/context/` with the user; on later changes it
   checks the change against constraints and decisions and plans the
   `docs/context/` updates as tasks.
+- `examples/techdocs/`: a minimal `mkdocs.yml` and `catalog-info.yaml` for
+  publishing `docs/context/` with Backstage TechDocs, tested with
+  `mkdocs-techdocs-core`.

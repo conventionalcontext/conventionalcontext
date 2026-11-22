@@ -55,7 +55,7 @@ anything OpenSpec keeps.
    or term, or a roadmap update.
 3. **Publishing.** `docs/context/` is plain Markdown, so a documentation site
    or developer portal (for example Backstage TechDocs) can publish it with
-   the rest of `docs/`.
+   the rest of `docs/`. See [examples/techdocs/](examples/techdocs/).
 
 ## What goes where
 
