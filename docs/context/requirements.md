@@ -23,6 +23,7 @@ it does ([0010](decisions/0010-human-agency-enforced-by-gitops.md)).
 | Who | What they need from it |
 |---|---|
 | Project creators starting a new repository with AI agents | A guided way to settle intent before agents build |
+| Teams with an existing repository that agents work on | A drafted record of the project's intent to confirm, so agents follow what people actually decided |
 | Maintainers and reviewers | To check the plan before the build, and agent output against intent |
 | Newcomers to a project | To learn why the project is the way it is |
 | Platform teams running a developer portal (Backstage, Port) | Plain-Markdown project intent to publish next to each repository |

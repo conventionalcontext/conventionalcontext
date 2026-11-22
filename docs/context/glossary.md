@@ -41,6 +41,8 @@ Terms marked *(OpenSpec)* use OpenSpec's definitions, quoted from the
 | `docs/context/` | The folder holding a project's recorded intent: requirements (purpose, users, scope, quality requirements), constraints, architecture, decisions, glossary, and roadmap. Written for people. |
 | Inception change | The first OpenSpec change in a project that uses the `conventional-context` schema. It creates `docs/context/` with the user before any code is written. |
 | Context review | The `context.md` artifact of a change: which constraints and decisions apply, any conflicts, and the context updates the change makes. |
+| Proposed decision | A decision record with status `proposed`: suggested, for example inferred by an agent from existing code, but not yet confirmed by a person. Agents list it as unconfirmed and never treat it as a rule. |
+| Accepted decision | A decision record with status `accepted`: confirmed by people. Only accepted decisions bind agents' changes. |
 | Context updates | What a change adds to or changes in `docs/context/` because it outlasts the change. Planned in `context.md`, done as tasks, reviewed in the same pull request. |
 | Constraint | A rule the project must work within that cannot be inferred from the code, with the reason for it. Listed with a `C-NNN` ID in `constraints.md`. |
 | Quality requirement | How well the project must work (performance, availability, security, cost), measurable, with an `NFR-NNN` ID. Behavior is not a quality requirement; it belongs in a spec. |

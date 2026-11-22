@@ -53,7 +53,10 @@ artifacts:
       Conventional Context: if `docs/context/README.md` does not exist, this is
       the project's inception change. Then **Why** states the project's purpose
       and who it is for, and **Capabilities** lists the first capabilities the
-      project needs. Everything else about the project (users, scope, quality
+      project needs. On an existing codebase, the inception change records
+      intent and does not change behavior: list no capabilities and set
+      `skip_specs: true` in the change's `.openspec.yaml`, unless the user
+      asks to specify existing capabilities now. Everything else about the project (users, scope, quality
       requirements, constraints, architecture, decisions, terms) is settled in
       the context artifact, not here.
     requires: []
@@ -75,33 +78,65 @@ artifacts:
       1. Copy the templates from the schema's `docs-context/` folder
          (`openspec/schemas/conventional-context/docs-context/`) into
          `docs/context/`, keeping the same names. Keep the frontmatter.
-      2. Ask the user what you need to fill them in: users and stakeholders,
-         what is in and out of scope, measurable quality requirements
-         (performance, availability, security, cost), constraints and the
-         reason for each, the main architecture choices, and project-specific
-         terms. Ask in small groups of questions. Do not guess: a wrong
-         constraint is worse than a missing one. Leave a section empty with
-         its guidance comment if the user has no answer yet.
-      3. Fill in the files. Record each significant choice the user has
-         already made (language, platform, hosting, main patterns) as a
-         decision in `docs/context/decisions/NNNN-title.md`, numbered from
-         0001, using `decisions/template.md`, with status `accepted`. List
-         each decision in the table in `docs/context/README.md`. Delete
+      2. **Existing codebase only** (the repository already has application
+         code, not just scaffolding): draft what the code shows before asking
+         anything. Read the README and other docs, build and dependency
+         files, the directory layout, CI and deployment configuration, and
+         any existing decision records. From them, draft:
+         - in `architecture.md`: the context, building blocks, and solution
+           strategy;
+         - one decision record per significant technology choice already
+           made (language, frameworks, data stores, hosting, CI), with
+           status `proposed` and, under Context and Problem Statement,
+           "Inferred from the code. Reason not recorded; to confirm.";
+         - in `glossary.md`: terms the code and docs use with a specific
+           meaning;
+         - in `requirements.md`, only if the existing docs state it: the
+           purpose.
+         Do not write constraints from the code: a rule the code seems to
+         follow may be an accident. List possible constraints as questions
+         instead. Keep each drafted file's frontmatter `status: draft`.
+      3. Ask the user, in small groups of questions:
+         - on an existing codebase, to confirm or correct each drafted item,
+           to give the reason for each drafted decision, and to answer each
+           possible constraint;
+         - on every project, what the code cannot show: users and
+           stakeholders, what is in and out of scope, measurable quality
+           requirements (performance, availability, security, cost),
+           constraints and the reason for each, the main architecture
+           choices, and project-specific terms.
+         Do not guess: a wrong constraint is worse than a missing one. Leave
+         a section empty with its guidance comment if the user has no answer
+         yet.
+      4. Fill in the files with the answers. Record each significant choice
+         the user has made or confirmed (language, platform, hosting, main
+         patterns) as a decision in `docs/context/decisions/NNNN-title.md`,
+         numbered from 0001, using `decisions/template.md`, with status
+         `accepted` and the user's reason. A drafted decision the user has
+         not confirmed keeps status `proposed`; one the user rejects is
+         deleted. Set a file's frontmatter to `status: current` once the
+         user has confirmed its content. List each decision, with its
+         status, in the table in `docs/context/README.md`. Delete
          `decisions/template.md` from `docs/context/` afterwards.
-      4. In `requirements.md` and `roadmap.md`, link to `openspec/specs/` and
+      5. In `requirements.md` and `roadmap.md`, link to `openspec/specs/` and
          to this change instead of restating behavior. Put this change under
          **Now** in `roadmap.md`.
-      5. Write `context.md` with mode `inception`, summarising what was
-         recorded, and tell the user to review `docs/context/` before
-         continuing. These files are the intent the agents will build.
+      6. Write `context.md` with mode `inception` (or `inception, existing
+         codebase`), summarising what was recorded and listing each item
+         that is still `proposed`. Tell the user to review `docs/context/`
+         before continuing. These files are the intent the agents will build
+         and maintain.
 
       **Change** - `docs/context/` exists.
       1. Read `docs/context/constraints.md` and the decision records in
          `docs/context/decisions/` (skip `archive/`, which holds superseded
          versions). Read `glossary.md` only for terms this change uses.
          Do not read the other files unless the proposal touches them.
-      2. In `context.md`, list the constraints and decisions that apply to
-         this change, by ID or number, each with one line on how it applies.
+      2. In `context.md`, list the constraints and the `accepted` decisions
+         that apply to this change, by ID or number, each with one line on
+         how it applies. Only accepted decisions bind the change. List
+         `proposed` decisions that touch it separately, as unconfirmed, and
+         ask the user whether to follow them; do not treat them as rules.
       3. If the proposal contradicts a constraint or an accepted decision,
          list it under **Conflicts** and resolve it with the user before
          continuing: either change the proposal, or plan a change to the

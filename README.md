@@ -40,7 +40,10 @@ a popular tool for spec-driven development: you describe a change, an agent
 writes down what it will do and how, and then builds it.
 
 1. **Start.** The first change asks you about the project and writes
-   `docs/context/`. You review it before any code is written.
+   `docs/context/`. You review it before any code is written. On an
+   existing project, the agent first drafts what it can tell from the code,
+   and you confirm or correct it: nothing it guessed becomes a rule until
+   you do.
 2. **Every change after that.** The agent checks the change against your
    rules and decisions. If they conflict, it asks you. Anything that will
    still matter later (a new decision, rule, or term) is added to

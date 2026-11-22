@@ -39,12 +39,30 @@ When `docs/context/` does not exist yet, the context step:
    already made (language, platform, hosting) as a decision.
 4. Asks you to review `docs/context/` before anything is built.
 
+### On an existing project
+
+When the repository already has code, the agent does some homework first:
+
+1. It reads the code and existing docs, and drafts how the project is built,
+   the technology choices already made, and the terms it uses.
+2. Each inferred choice becomes a decision marked **proposed**, with "reason
+   not recorded; to confirm".
+3. It does not write rules from the code: a pattern the code follows may be
+   an accident. It asks you instead.
+4. You confirm, correct, or reject each draft, and answer the same questions
+   as for a new project. Confirmed decisions become **accepted**.
+
+Agents follow only accepted decisions. A proposed decision is shown to you as
+unconfirmed, never enforced. This first change records intent only; it does
+not change what the system does.
+
 ## Every change after that
 
 When `docs/context/` exists, the context step:
 
 1. Reads only your rules (`constraints.md`) and decisions (`decisions/`).
-2. Lists which of them apply to the change.
+2. Lists which rules and accepted decisions apply to the change, and asks
+   you about any proposed decision it touches.
 3. Stops and asks you if the change conflicts with one: change the plan, or
    change the rule.
 4. Lists what the change adds that will still matter later: a decision, a

@@ -12,15 +12,21 @@
 - [x] 2.2 Build the website and verify `zensical build --strict -f docs/website/mkdocs.yml` passes
 - [x] 2.3 Check every relative link in `README.md`, `AGENTS.md`, `CHANGELOG.md`, `docs/context/`, `examples/`, and this change, and verify none is broken
 
-## 3. Context updates
+## 3. Existing codebases
 
-- [x] 3.1 `docs/context/README.md`: index and decisions table; verified by a row for each of 0001 to 0010
-- [x] 3.2 `docs/context/requirements.md`: purpose, users and stakeholders, scope, NFR-001 to NFR-003; verified by its behavior section linking to `openspec/specs/`
-- [x] 3.3 `docs/context/constraints.md`: C-001 to C-009; verified by a reason for each
-- [x] 3.4 `docs/context/architecture.md`: context, strategy, building blocks, distribution, checks; verified by the building blocks table
-- [x] 3.5 `docs/context/decisions/0001` to `0010`: verified by status `accepted` and decision-makers andreouellet and Hamed Minaee
-- [x] 3.6 `docs/context/glossary.md`: agents and context, human agency and review, Conventional Context, and OpenSpec terms quoted from OpenSpec's glossary; verified by the link to it
-- [x] 3.7 `docs/context/roadmap.md`: this change under Now; verified by the link to `openspec/changes/inception/`
+- [x] 3.1 Add the existing-codebase steps to the schema's proposal and context instructions and verify `openspec instructions context` shows them
+- [x] 3.2 Run an existing-codebase inception in a scratch copy of a real project and verify `openspec validate --strict` rejects it without `skip_specs: true` and accepts it with it
+- [x] 3.3 Update the README, website, and `docs/context/` to describe existing projects and verify the website builds with `--strict`
+
+## 4. Context updates
+
+- [x] 4.1 `docs/context/README.md`: index and decisions table; verified by a row for each of 0001 to 0010
+- [x] 4.2 `docs/context/requirements.md`: purpose, users and stakeholders, scope, NFR-001 to NFR-003; verified by its behavior section linking to `openspec/specs/`
+- [x] 4.3 `docs/context/constraints.md`: C-001 to C-009; verified by a reason for each
+- [x] 4.4 `docs/context/architecture.md`: context, strategy, building blocks, distribution, checks; verified by the building blocks table
+- [x] 4.5 `docs/context/decisions/0001` to `0010`: verified by status `accepted` and decision-makers andreouellet and Hamed Minaee
+- [x] 4.6 `docs/context/glossary.md`: agents and context, human agency and review, Conventional Context, and OpenSpec terms quoted from OpenSpec's glossary; verified by the link to it
+- [x] 4.7 `docs/context/roadmap.md`: this change under Now; verified by the link to `openspec/changes/inception/`
 
 ## Workflow follow-up
 

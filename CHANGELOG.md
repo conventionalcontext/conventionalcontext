@@ -32,7 +32,9 @@ release. 1.0.0 comes when they are stable and used by real projects.
   `openspec/schemas/conventional-context/docs-context/`.
 - OpenSpec schema `conventional-context`: OpenSpec's `spec-driven` workflow
   plus a `context` artifact (proposal → context → specs → design → tasks).
-  At inception it writes `docs/context/` with the user; on later changes it
+  At inception it writes `docs/context/` with the user; on an existing
+  codebase it first drafts from the code, marking inferred decisions
+  `proposed` until the user confirms them; on later changes it
   checks the change against constraints and decisions and plans the
   `docs/context/` updates as tasks.
 - `examples/techdocs/`: a minimal `mkdocs.yml` and `catalog-info.yaml` for

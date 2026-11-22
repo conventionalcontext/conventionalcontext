@@ -63,7 +63,10 @@ spec or a plan, it checks the change against your rules and decisions.
 ## How it works
 
 1. **Start.** The first change asks you about the project and writes
-   `docs/context/`. You review it before any code is written.
+   `docs/context/`. You review it before any code is written. On an
+   existing project, the agent first drafts what it can tell from the code,
+   and you confirm or correct it: nothing it guessed becomes a rule until
+   you do.
 2. **Every change after that.** The agent checks the change against your
    rules and decisions. If they conflict, it asks you. Anything that will
    still matter later (a new decision, rule, or term) is added to
@@ -121,10 +124,11 @@ Once `v0.1.0` is released:
     Versions for other tools (Spec Kit, Kiro) are on the roadmap.
 
 ??? question "Can I use it on an existing project?"
-    It is designed for new projects. You can run it on an existing one, and
-    the agent will ask you about what is already there. Having the agent
-    draft `docs/context/` from existing code, for you to confirm, is
-    planned.
+    Yes. The agent drafts what the code shows (how it is built, the
+    technology choices already made, the terms it uses) and marks each
+    choice as *proposed*. You confirm or correct each one, and add what the
+    code cannot show: who it is for, what is out of scope, and the rules it
+    must follow. Agents only follow decisions you have confirmed.
 
 ??? question "Does it guarantee that agents follow the rules?"
     Not on its own. Agents are instructed to check the rules and ask you

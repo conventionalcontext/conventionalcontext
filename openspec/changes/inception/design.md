@@ -33,6 +33,13 @@ marked "(record)" here:
   configuration, not in a schema. Doing them as tasks also puts them in the
   same pull request as the code. This follows from the schema format, so it
   is specified in `change-review` rather than recorded as a decision.
+- Existing codebases: the agent drafts from the code, but inferred decisions
+  stay `proposed` and only `accepted` decisions bind later changes, and no
+  constraint is written from the code alone. Agent-generated context made
+  agents worse in Gloaguen et al. (2026), so a guess must never become a
+  rule without a person (C-009,
+  [0010](../../../docs/context/decisions/0010-human-agency-enforced-by-gitops.md)).
+  Specified in `inception` and `change-review`.
 - Schema location and distribution:
   [0009](../../../docs/context/decisions/0009-publish-schema-in-openspec-schemas.md)
 

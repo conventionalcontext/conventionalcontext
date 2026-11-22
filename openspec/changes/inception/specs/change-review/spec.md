@@ -17,12 +17,20 @@ In a change that is not an inception change, the agent SHALL read from `docs/con
 - **THEN** it reads `constraints.md` and the current decision records, and not `architecture.md`, `requirements.md`, or `decisions/archive/`
 
 ### Requirement: Applicable constraints and decisions listed
-The context artifact SHALL list each constraint and decision that applies to the change, by ID or number, with one line on how it applies.
+The context artifact SHALL list each constraint and `accepted` decision that applies to the change, by ID or number, with one line on how it applies.
 
 #### Scenario: Constraint applies
 - **GIVEN** constraint C-003 says cloud access uses short-lived credentials
 - **WHEN** a change adds a deployment step
 - **THEN** `context.md` lists C-003 and how the step must respect it
+
+### Requirement: Only accepted decisions bind
+Decisions with status `proposed` MUST NOT be treated as rules. The context artifact SHALL list proposed decisions that touch the change separately, as unconfirmed, and ask the user whether to follow them.
+
+#### Scenario: Unconfirmed inferred decision
+- **GIVEN** a `proposed` decision, drafted from existing code, that says the project uses REST
+- **WHEN** a change adds a GraphQL endpoint
+- **THEN** `context.md` lists the decision as unconfirmed and asks the user, and does not report it as a conflict
 
 ### Requirement: Conflicts resolved before specs
 When a proposal contradicts a constraint or an accepted decision, the agent MUST list the conflict in `context.md` and resolve it with the user before writing specs or design.

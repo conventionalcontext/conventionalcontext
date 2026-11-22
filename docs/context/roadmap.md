@@ -8,15 +8,14 @@ status: current
 ## Now
 
 - [Inception change](../../openspec/changes/inception/): this project's
-  `docs/context/` and the specs for its three capabilities
+  `docs/context/` and the specs for its three capabilities, including
+  inception on existing projects (agent drafts, people confirm)
 - First release of the schema: tag `v0.1.0` after the pull request is
   approved, so the install command in the README works
 - Point conventionalcontext.org at the GitHub Pages website
 
 ## Next
 
-- Existing projects: the agent drafts `docs/context/` from the existing code,
-  marks what it inferred as `proposed`, and asks people to confirm it
 
 - Test the schema with a fresh agent on a new project, in Claude Code,
   GitHub Copilot, and Google Antigravity
