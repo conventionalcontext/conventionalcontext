@@ -1,18 +1,18 @@
 ---
 type: constraints
-status: current
+status: draft
 ---
 
 # Constraints
 
-| ID | Constraint | Why |
+| ID | Rule | Why |
 |---|---|---|
-| C-001 | Extend OpenSpec; do not build a separate CLI or fork OpenSpec. | One maintainer cannot keep a fork current, and OpenSpec users get Conventional Context as an add-on ([0001](decisions/0001-extend-openspec-with-a-schema.md)). |
-| C-002 | Never duplicate what OpenSpec keeps. Behavior lives only in `openspec/specs/`; `docs/context/` links to it. | Two copies drift apart ([0005](decisions/0005-behavior-stays-in-openspec.md)). |
-| C-003 | Keep OpenSpec's upstream schema text unchanged, and mark every addition with "Conventional Context:". | Upstream changes stay easy to merge ([0003](decisions/0003-own-schema-based-on-spec-driven.md)). |
-| C-004 | Do not route agents to `docs/context/`. The schema has agents read only constraints and decisions, and only when they plan a change. | Studies found that general context files do not help agents and add cost ([0002](decisions/0002-docs-context-for-people.md)). |
-| C-005 | Templates hold structure and guidance only, never example content. | Leftover examples get published and enforced as if they were real. |
-| C-006 | `docs/context/` is plain Markdown with minimal frontmatter; no portal-specific file is required. | It must work in any documentation site or developer portal ([0006](decisions/0006-publish-as-plain-markdown.md)). |
-| C-007 | Python tooling runs with `uv`, never `pip`. | The maintainers' setup; `pip` is not installed. |
-| C-008 | Changes reach `main` through a pull request approved by a maintainer other than its author. | Every change gets a second pair of eyes. |
-| C-009 | Agents never change constraints or decisions without a person's approval: such changes are planned as tasks and merged only through an approved pull request. | People stay in charge of the rules agents follow ([0010](decisions/0010-human-agency-enforced-by-gitops.md)). |
+| C-001 | Extend OpenSpec; do not build a separate tool or fork OpenSpec. | People get Conventional Context inside a tool they may already use, and there is nothing extra to maintain ([0001](decisions/0001-extend-openspec-with-a-schema.md)). |
+| C-002 | Never repeat what OpenSpec records. What the system does lives only in `openspec/specs/`. | Two copies drift apart ([0003](decisions/0003-behavior-stays-in-openspec.md)). |
+| C-003 | Keep the text taken from OpenSpec's schema unchanged, and mark every addition "Conventional Context:". | New OpenSpec releases stay easy to take in ([0001](decisions/0001-extend-openspec-with-a-schema.md)). |
+| C-004 | Do not tell agents to read `docs/context/` for every task. | General context files do not improve agents' results and add cost ([0002](decisions/0002-human-agency-enforced-by-gitops.md)). |
+| C-005 | Templates hold structure and guidance only, never example content. | Leftover examples get published, and followed, as if they were real. |
+| C-006 | `docs/context/` is plain Markdown; no portal-specific file is required. | It must work in any documentation site or portal ([0005](decisions/0005-publish-as-plain-markdown.md)). |
+| C-007 | Python tools run with `uv`, never `pip`. | The maintainers' setup. |
+| C-008 | Changes reach `main` only through a pull request approved by a maintainer other than its author. | Every change gets a second pair of eyes. |
+| C-009 | Agents never change rules or decisions without a person's approval. | People stay in charge of the rules agents follow ([0002](decisions/0002-human-agency-enforced-by-gitops.md)). |

@@ -89,6 +89,21 @@ Once `v0.1.0` is released:
 
 More on the website, [conventionalcontext.org](https://conventionalcontext.org).
 
+## History
+
+Conventional Context is the third attempt at the same idea:
+
+1. **HARC** (Human Agentic Readable Context), a framework with a
+   `docs/context/` folder, agent instruction files, and setup scripts.
+2. **Conventional Context as a specification**, with its own rules for
+   `docs/context/` and for telling agents to read it.
+3. **This version**, a schema for OpenSpec, written for people.
+
+Both earlier versions are kept as git tags for reference:
+[`archive/harc`](https://github.com/conventionalcontext/conventionalcontext/tree/archive/harc)
+and
+[`archive/cc-spec`](https://github.com/conventionalcontext/conventionalcontext/tree/archive/cc-spec).
+
 ## Contributing
 
 Issues and pull requests are welcome. See the

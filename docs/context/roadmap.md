@@ -1,41 +1,36 @@
 ---
 type: roadmap
-status: current
+status: draft
 ---
 
 # Roadmap
 
 ## Now
 
-- [Inception change](../../openspec/changes/inception/): this project's
-  `docs/context/` and the specs for its three capabilities, including
-  inception on existing projects (agent drafts, people confirm)
-- First release of the schema: tag `v0.1.0` after the pull request is
-  approved, so the install command in the README works
-- Point conventionalcontext.org at the GitHub Pages website
+- [First change](../../openspec/changes/inception/): this project's
+  `docs/context/` and the specs for the schema, including existing projects
+- After approval: set all decisions to `accepted`, finish the change, and
+  release `v0.1.0`
+- Point conventionalcontext.org at the website
 
 ## Next
 
-
-- Test the schema with a fresh agent on a new project, in Claude Code,
-  GitHub Copilot, and Google Antigravity
-- Check with OpenSpec in CI: `openspec schema validate` and a TechDocs build
-  of the templates
-- List the schema in OpenSpec's community schemas
-- Measure whether the constraints and decisions check changes agents'
-  results, on tasks that depend on a recorded decision
+- Try the schema with a fresh agent, on a new and an existing project, in
+  Claude Code, GitHub Copilot, and Google Antigravity
+- Run the checks in CI
+- List the schema among OpenSpec's community schemas
+- Measure whether checking rules and decisions changes what agents build
 
 ## Later
 
-- Spec Kit extension that brings the same `docs/context/` to Spec Kit
-  projects
-- Kiro steering file that points Kiro at `docs/context/`
+- A Spec Kit version
+- A Kiro version
 
 ## Out of scope
 
-- Agent routing through `AGENTS.md`
-  ([0002](decisions/0002-docs-context-for-people.md))
+- Telling agents to read all of `docs/context/`
+  ([0002](decisions/0002-human-agency-enforced-by-gitops.md))
 - Feature files in `docs/context/`
-  ([0005](decisions/0005-behavior-stays-in-openspec.md))
-- A separate CLI or a fork of OpenSpec
+  ([0003](decisions/0003-behavior-stays-in-openspec.md))
+- A separate tool, or a fork of OpenSpec
   ([0001](decisions/0001-extend-openspec-with-a-schema.md))

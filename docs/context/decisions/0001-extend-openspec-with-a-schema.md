@@ -1,47 +1,41 @@
 ---
 type: decision
-status: accepted
-date: 2026-11-21
-decision-makers: andreouellet, Hamed Minaee
+status: proposed
+date: 2026-11-22
+decision-makers: andreouellet, hamed-minaee
 ---
 
 # Extend OpenSpec with a schema
 
 ## Context and Problem Statement
 
-Conventional Context grew out of HARC, an earlier framework (tag
-`archive/harc`). Its previous version (tag `archive/cc-spec`) was a
-standalone specification for `docs/context/`, with its own versioned text,
-agent routing, and feature files. Research in November 2026 showed that
-spec-driven development tools already cover much of it: Spec Kit's community
-extensions, OpenSpec's living specs, and Kiro's steering files. OpenSpec is
-the lightest of these and is growing fast (npm downloads went from about
-70,000 a month in January 2026 to about 3.3 million in October). How should
-Conventional Context add what these tools lack without competing with them?
+Spec-driven development tools (OpenSpec, Spec Kit, Kiro) already record
+what a system should do, one change at a time. What they do not record well
+is the project's intent: who it is for, its rules, and the decisions behind
+it. How should Conventional Context add that?
 
 ## Considered Options
 
-* Extend OpenSpec with a schema
-* Standalone specification (the `archive/cc-spec` approach)
-* Fork OpenSpec or Spec Kit
-* Contribute the features upstream to OpenSpec or Spec Kit
+* A schema for OpenSpec, based on OpenSpec's default `spec-driven` schema
+* A standalone specification with its own tools
+* A fork of OpenSpec or Spec Kit
+* Building on the `intent-driven` community schema for OpenSpec
 
 ## Decision Outcome
 
-Chosen option: "Extend OpenSpec with a schema", because a schema is OpenSpec's supported extension point, reaches its users without a new tool, and costs little to maintain.
+Chosen option: "A schema for OpenSpec, based on `spec-driven`", because a schema is OpenSpec's own way to extend it, so OpenSpec users get Conventional Context without a new tool, and OpenSpec is lightweight and widely used.
 
-* Support for other tools (a Spec Kit extension, a Kiro steering file) is on the roadmap.
+* The schema is OpenSpec's `spec-driven` steps plus one step, `context`. OpenSpec's text is kept unchanged, and every addition is marked "Conventional Context:" (C-003), so new OpenSpec releases are easy to take in.
+* Versions for other tools (Spec Kit, Kiro) are on the roadmap.
 
 ### Consequences
 
-* Good, because users install one folder into a tool they already use.
-* Good, because there is no CLI or fork to maintain.
-* Bad, because Conventional Context depends on OpenSpec's schema format, which is marked experimental.
-* Bad, because projects that do not use OpenSpec cannot use it yet.
+* Good, because people use a tool they may already know.
+* Good, because there is no tool or fork to maintain.
+* Bad, because it depends on OpenSpec's schema format, which OpenSpec still calls experimental.
+* Bad, because projects without OpenSpec cannot use it yet.
 
 ## More Information
 
 * OpenSpec: <https://github.com/Fission-AI/OpenSpec>
-* Earlier versions, kept as tags in this repository:
-  [`archive/harc`](https://github.com/conventionalcontext/conventionalcontext/tree/archive/harc) (HARC) and
-  [`archive/cc-spec`](https://github.com/conventionalcontext/conventionalcontext/tree/archive/cc-spec) (standalone specification)
+* `intent-driven` schema: <https://github.com/intent-driven-dev/openspec-schemas>

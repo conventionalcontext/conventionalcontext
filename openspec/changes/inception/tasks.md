@@ -20,16 +20,17 @@
 
 ## 4. Context updates
 
-- [x] 4.1 `docs/context/README.md`: index and decisions table; verified by a row for each of 0001 to 0010
+- [x] 4.1 `docs/context/README.md`: index and decisions table; verified by a row for each of 0001 to 0008
 - [x] 4.2 `docs/context/requirements.md`: purpose, users and stakeholders, scope, NFR-001 to NFR-003; verified by its behavior section linking to `openspec/specs/`
 - [x] 4.3 `docs/context/constraints.md`: C-001 to C-009; verified by a reason for each
 - [x] 4.4 `docs/context/architecture.md`: context, strategy, building blocks, distribution, checks; verified by the building blocks table
-- [x] 4.5 `docs/context/decisions/0001` to `0010`: verified by status `accepted` and decision-makers andreouellet and Hamed Minaee
+- [x] 4.5 `docs/context/decisions/0001` to `0008`: verified by status `proposed` and decision-makers andreouellet, hamed-minaee
 - [x] 4.6 `docs/context/glossary.md`: agents and context, human agency and review, Conventional Context, and OpenSpec terms quoted from OpenSpec's glossary; verified by the link to it
 - [x] 4.7 `docs/context/roadmap.md`: this change under Now; verified by the link to `openspec/changes/inception/`
 
 ## Workflow follow-up
 
-- Open the pull request; Hamed Minaee reviews and approves it (C-008).
+- Open the pull request; hamed-minaee reviews and approves it (C-008).
+- After approval, set every decision in `docs/context/decisions/` to `accepted`.
 - Archive the change after approval, so the specs move to `openspec/specs/`.
 - Tag `v0.1.0` after merge, so the install command in the README works.

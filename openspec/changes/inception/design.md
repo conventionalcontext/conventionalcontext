@@ -19,29 +19,27 @@ already built. See proposal.md for why.
 
 ## Decisions
 
-Every lasting decision made for this design is already recorded in
-`docs/context/decisions/` by this change's context artifact, so none is
-marked "(record)" here:
+Every lasting decision made for this design is recorded in
+`docs/context/decisions/` by this change's context step, so none is marked
+"(record)" here:
 
-- Extend OpenSpec with a schema: [0001](../../../docs/context/decisions/0001-extend-openspec-with-a-schema.md)
-- `docs/context/` for people; agents read only constraints and decisions
-  while planning: [0002](../../../docs/context/decisions/0002-docs-context-for-people.md)
-- Schema based on `spec-driven`, upstream text unchanged:
-  [0003](../../../docs/context/decisions/0003-own-schema-based-on-spec-driven.md)
-- Context updates are planned in the context artifact and done as tasks,
-  not at archive, because OpenSpec only allows archive guidance in project
-  configuration, not in a schema. Doing them as tasks also puts them in the
-  same pull request as the code. This follows from the schema format, so it
-  is specified in `change-review` rather than recorded as a decision.
-- Existing codebases: the agent drafts from the code, but inferred decisions
-  stay `proposed` and only `accepted` decisions bind later changes, and no
-  constraint is written from the code alone. Agent-generated context made
-  agents worse in Gloaguen et al. (2026), so a guess must never become a
-  rule without a person (C-009,
-  [0010](../../../docs/context/decisions/0010-human-agency-enforced-by-gitops.md)).
-  Specified in `inception` and `change-review`.
-- Schema location and distribution:
-  [0009](../../../docs/context/decisions/0009-publish-schema-in-openspec-schemas.md)
+- Extend OpenSpec with a schema built on `spec-driven`, OpenSpec's text
+  unchanged: [0001](../../../docs/context/decisions/0001-extend-openspec-with-a-schema.md)
+- Human agency, enforced by GitOps; agents read only rules and accepted
+  decisions while planning: [0002](../../../docs/context/decisions/0002-human-agency-enforced-by-gitops.md)
+- Where the schema lives, and how projects get it:
+  [0006](../../../docs/context/decisions/0006-publish-schema-in-openspec-schemas.md)
+
+Two choices follow from OpenSpec's format and are specified rather than
+recorded as decisions:
+
+- Updates to `docs/context/` are planned in the context step and done as
+  tasks, because a schema cannot add steps to OpenSpec's archive. As tasks,
+  they also land in the same pull request as the code (`change-review`).
+- On an existing project, the agent drafts from the code, but what it infers
+  stays `proposed`, only `accepted` decisions bind later changes, and no
+  rule is written from the code alone, so a guess never becomes a rule
+  without a person (`inception`, `change-review`).
 
 ## Risks / Trade-offs
 

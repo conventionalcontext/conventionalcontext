@@ -1,27 +1,26 @@
 ---
 type: decision
-status: accepted
-date: 2026-11-21
-decision-makers: andreouellet, Hamed Minaee
+status: proposed
+date: 2026-11-22
+decision-makers: andreouellet, hamed-minaee
 ---
 
-# MIT license for the whole repository
+# MIT license
 
 ## Context and Problem Statement
 
-The previous version (tag `archive/cc-spec`) licensed parts differently (CC-BY-4.0, CC0-1.0,
-Apache-2.0). Adopters copy the schema and templates into their own
-repositories, and OpenSpec is MIT-licensed.
+Projects copy the schema and templates into their own repositories. The
+schema text comes from OpenSpec, which uses the MIT license.
 
 ## Considered Options
 
 * MIT for everything
 * Apache-2.0 for everything
-* Licenses by directory
+* Different licenses for different folders
 
 ## Decision Outcome
 
-Chosen option: "MIT for everything", because it matches OpenSpec, from which the schema text is copied, and lets adopters copy files freely.
+Chosen option: "MIT for everything", because it matches OpenSpec and lets projects copy the files freely.
 
 ### Consequences
 

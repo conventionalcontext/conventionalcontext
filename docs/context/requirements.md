@@ -1,6 +1,6 @@
 ---
 type: requirements
-status: current
+status: draft
 ---
 
 # Requirements
@@ -8,62 +8,50 @@ status: current
 ## Purpose
 
 Keep people aware and in charge of what AI agents build. AI coding agents
-can write most of a project's code, but the intent behind it usually stays
-in one person's head or in an agent session no one else can see.
-Conventional Context supports human agency: people write the project's
-intent down and review it before agents build, agents check every change
-against it and ask when there is a conflict, and a GitOps workflow makes
-sure a person approves every change. The record stays readable for
-maintainers, reviewers, newcomers, and developer portals. It works as an
-OpenSpec schema and adds what OpenSpec does not keep, without repeating what
-it does ([0010](decisions/0010-human-agency-enforced-by-gitops.md)).
+can write most of a project's code, but the intent behind it often stays in
+one person's head or in an agent session nobody else can see. Conventional
+Context has people write that intent down and review it before agents
+build; agents check every change against it and ask when something
+conflicts; and a GitOps workflow makes sure a person approves every change
+([0002](decisions/0002-human-agency-enforced-by-gitops.md)).
 
-## Users and stakeholders
+## Users
 
-| Who | What they need from it |
+| Who | What they need |
 |---|---|
-| Project creators starting a new repository with AI agents | A guided way to settle intent before agents build |
-| Teams with an existing repository that agents work on | A drafted record of the project's intent to confirm, so agents follow what people actually decided |
-| Maintainers and reviewers | To check the plan before the build, and agent output against intent |
-| Newcomers to a project | To learn why the project is the way it is |
-| Platform teams running a developer portal (Backstage, Port) | Plain-Markdown project intent to publish next to each repository |
-| OpenSpec users | An add-on schema, not a new tool |
+| People starting a new project with AI agents | A guided way to settle what the project is for before agents build |
+| Teams whose existing project agents work on | A drafted record of the project's intent to confirm, so agents follow what people decided |
+| Maintainers and reviewers | To check the plan before agents build, and the result after |
+| Newcomers | To learn why the project is the way it is |
+| Teams running a developer portal (Backstage, Port) | The project's intent, in Markdown, to publish next to its code |
+| OpenSpec users | An add-on, not a new tool |
 
-Decisions about this project are made by its maintainers, andreouellet and
-Hamed Minaee. A change reaches `main` through a pull request approved by a
-maintainer other than its author (C-008).
+Decisions about Conventional Context are made by its maintainers,
+andreouellet and hamed-minaee.
 
 ## Scope
 
-**In scope:**
-
-- The `conventional-context` OpenSpec schema and its templates
-- The `docs/context/` convention, including the decision archive rule
-- Publishing examples (Backstage TechDocs)
-- The conventionalcontext.org website
+**In scope:** the `conventional-context` schema for OpenSpec and its
+templates; the `docs/context/` folder and its rules; a Backstage TechDocs
+example; the conventionalcontext.org website.
 
 **Out of scope:**
 
-- Routing agents to `docs/context/` through `AGENTS.md`
-  ([0002](decisions/0002-docs-context-for-people.md))
-- Behavior specs and feature files; OpenSpec owns them
-  ([0005](decisions/0005-behavior-stays-in-openspec.md))
-- A separate CLI or tool, or a fork of OpenSpec
+- Telling agents to read `docs/context/` for every task
+  ([0002](decisions/0002-human-agency-enforced-by-gitops.md))
+- Describing what the system does; OpenSpec does that
+  ([0003](decisions/0003-behavior-stays-in-openspec.md))
+- A separate tool, or a fork of OpenSpec
   ([0001](decisions/0001-extend-openspec-with-a-schema.md))
-- A convention for agent skill directories (`openspec init` already installs
-  skills for each agent)
-- Making Spec Kit, OpenSpec, and Kiro interchangeable
-- Portal-specific files beyond examples
 
 ## Quality requirements
 
 | ID | Requirement | How it is checked |
 |---|---|---|
-| NFR-001 | The schema is valid for the latest OpenSpec release. | `openspec schema validate conventional-context` passes |
-| NFR-002 | In a change (not inception), the agent reads at most `constraints.md`, the current decision records, and the glossary terms the change uses from `docs/context/`. | Review of the schema's `context` instruction; observed in test changes |
+| NFR-001 | The schema works with the latest OpenSpec release. | `openspec schema validate conventional-context` passes |
+| NFR-002 | When planning a change, agents read from `docs/context/` only the rules, the accepted decisions, and the glossary terms they need. | Review of the schema's instructions |
 | NFR-003 | A filled-in `docs/context/` builds with Backstage TechDocs without errors. | `mkdocs build` with `mkdocs-techdocs-core` and `examples/techdocs/mkdocs.yml` |
 
-## Behavior
+## What the system does
 
-What the schema does is specified per capability in
-[`openspec/specs/`](../../openspec/specs/).
+See [`openspec/specs/`](../../openspec/specs/).
