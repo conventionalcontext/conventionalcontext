@@ -1,0 +1,14 @@
+# Backstage catalog entry, at the root of an adopting repository.
+# Only the techdocs-ref annotation matters for Conventional Context: it tells
+# TechDocs to build the docs/ folder next to mkdocs.yml.
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: my-service
+  description: One line from docs/context/README.md
+  annotations:
+    backstage.io/techdocs-ref: dir:.
+spec:
+  type: service
+  lifecycle: production
+  owner: my-team

@@ -1,0 +1,36 @@
+# Tasks
+
+## 1. Schema
+
+- [x] 1.1 Validate the schema with the installed OpenSpec release and verify `openspec schema validate conventional-context` reports it valid
+- [x] 1.2 Validate this change and verify `openspec validate inception --strict` reports it valid
+- [x] 1.3 Install the schema from a release-shaped tarball into a fresh project with the README command and verify OpenSpec resolves and validates it there
+
+## 2. Publishing
+
+- [x] 2.1 Build this repository's `docs/context/` with `mkdocs-techdocs-core` and `examples/techdocs/mkdocs.yml`, and verify the build reports no warnings or errors (NFR-003)
+- [x] 2.2 Build the website and verify `zensical build --strict -f docs/website/mkdocs.yml` passes
+- [x] 2.3 Check every relative link in `README.md`, `AGENTS.md`, `CHANGELOG.md`, `docs/context/`, `examples/`, and this change, and verify none is broken
+
+## 3. Existing codebases
+
+- [x] 3.1 Add the existing-codebase steps to the schema's proposal and context instructions and verify `openspec instructions context` shows them
+- [x] 3.2 Run an existing-codebase inception in a scratch copy of a real project and verify `openspec validate --strict` rejects it without `skip_specs: true` and accepts it with it
+- [x] 3.3 Update the README, website, and `docs/context/` to describe existing projects and verify the website builds with `--strict`
+
+## 4. Context updates
+
+- [x] 4.1 `docs/context/README.md`: index and decisions table; verified by a row for each of 0001 to 0008
+- [x] 4.2 `docs/context/requirements.md`: purpose, users and stakeholders, scope, NFR-001 to NFR-003; verified by its behavior section linking to `openspec/specs/`
+- [x] 4.3 `docs/context/constraints.md`: C-001 to C-009; verified by a reason for each
+- [x] 4.4 `docs/context/architecture.md`: context, strategy, building blocks, distribution, checks; verified by the building blocks table
+- [x] 4.5 `docs/context/decisions/0001` to `0008`: verified by status `proposed` and decision-makers andreouellet, hamed-minaee
+- [x] 4.6 `docs/context/glossary.md`: agents and context, human agency and review, Conventional Context, and OpenSpec terms quoted from OpenSpec's glossary; verified by the link to it
+- [x] 4.7 `docs/context/roadmap.md`: this change under Now; verified by the link to `openspec/changes/inception/`
+
+## Workflow follow-up
+
+- Open the pull request; hamed-minaee reviews and approves it (C-008).
+- After approval, set every decision in `docs/context/decisions/` to `accepted`.
+- Archive the change after approval, so the specs move to `openspec/specs/`.
+- Tag `v0.1.0` after merge, so the install command in the README works.

@@ -1,0 +1,28 @@
+# Minimal mkdocs.yml for Backstage TechDocs, at the root of an adopting
+# repository. It publishes everything in docs/, including docs/context/.
+site_name: my-service
+repo_url: https://github.com/my-org/my-service
+edit_uri: edit/main/docs/
+
+plugins:
+  - techdocs-core
+
+# docs/context/ links to openspec/specs/ and openspec/changes/, which are
+# outside docs/. Report those links instead of failing the build; on the
+# published site they are best opened in the repository.
+validation:
+  links:
+    not_found: info
+    unrecognized_links: info
+
+# No nav: TechDocs builds it from the folders in docs/. Add one if you want a
+# fixed order, for example:
+# nav:
+#   - Home: index.md
+#   - Context:
+#       - context/README.md
+#       - context/requirements.md
+#       - context/constraints.md
+#       - context/architecture.md
+#       - context/glossary.md
+#       - context/roadmap.md
