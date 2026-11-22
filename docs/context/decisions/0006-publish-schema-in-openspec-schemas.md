@@ -9,9 +9,7 @@ decision-makers: andreouellet, hamed-minaee
 
 ## Context and Problem Statement
 
-OpenSpec finds a custom schema in a project's `openspec/schemas/<name>/`. It
-has no command to install a schema from the internet. Where should the
-schema live, and how do other projects get it?
+OpenSpec finds a custom schema in a project's `openspec/schemas/<name>/`. It has no command to install a schema from the internet. Where should the schema live, and how do other projects get it?
 
 ## Considered Options
 

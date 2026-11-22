@@ -39,5 +39,4 @@ let a user export data") does not belong here; it goes in openspec/specs/. -->
 
 ## Behavior
 
-What the system does is specified per capability in
-[`openspec/specs/`](../../openspec/specs/).
+What the system does is specified per capability in [`openspec/specs/`](../../openspec/specs/).

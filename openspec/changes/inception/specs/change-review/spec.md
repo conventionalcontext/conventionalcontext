@@ -2,9 +2,7 @@
 
 ## Purpose
 
-Checks every change after inception against the project's recorded
-constraints and decisions, and keeps `docs/context/` current with what the
-change adds that outlasts it.
+Checks every change after inception against the project's recorded constraints and decisions, and keeps `docs/context/` current with what the change adds that outlasts it.
 
 ## ADDED Requirements
 

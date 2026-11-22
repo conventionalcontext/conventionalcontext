@@ -19,9 +19,7 @@ project they are looking for. -->
 | [glossary.md](glossary.md) | Terms with a project-specific meaning |
 | [roadmap.md](roadmap.md) | Where it is heading |
 
-What the system does, capability by capability, is in
-[`openspec/specs/`](../../openspec/specs/). Work in progress is in
-[`openspec/changes/`](../../openspec/changes/).
+What the system does, capability by capability, is in [`openspec/specs/`](../../openspec/specs/). Work in progress is in [`openspec/changes/`](../../openspec/changes/).
 
 ## Decisions
 

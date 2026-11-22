@@ -9,10 +9,7 @@ decision-makers: andreouellet, hamed-minaee
 
 ## Context and Problem Statement
 
-Decision records are read by people who want to know what holds today. The
-usual practice (records never change; a new record replaces an old one)
-makes readers follow chains of links. How should a changed decision be
-recorded?
+Decision records are read by people who want to know what holds today. The usual practice (records never change; a new record replaces an old one) makes readers follow chains of links. How should a changed decision be recorded?
 
 ## Considered Options
 

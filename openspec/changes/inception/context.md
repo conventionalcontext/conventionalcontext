@@ -8,8 +8,7 @@ Recorded in this change: C-001 to C-009 in `docs/context/constraints.md`.
 
 ## Decisions that apply
 
-Recorded in this change: 0001 to 0008 in `docs/context/decisions/`, all
-`proposed` until the maintainers (andreouellet, hamed-minaee) approve them.
+Recorded in this change: 0001 to 0008 in `docs/context/decisions/`, all `proposed` until the maintainers (andreouellet, hamed-minaee) approve them.
 
 ## Conflicts
 
@@ -17,16 +16,14 @@ None.
 
 ## Terms
 
-Recorded in `docs/context/glossary.md`, including agent context terms and
-OpenSpec's own terms, quoted from its glossary.
+Recorded in `docs/context/glossary.md`, including agent context terms and OpenSpec's own terms, quoted from its glossary.
 
 ## Context updates
 
 Done in this change, from the interview with the maintainer:
 
 - `docs/context/README.md`: index and decisions table
-- `requirements.md`: purpose, users and stakeholders, scope, NFR-001 to
-  NFR-003; behavior links to `openspec/specs/`
+- `requirements.md`: purpose, users and stakeholders, scope, NFR-001 to NFR-003; behavior links to `openspec/specs/`
 - `constraints.md`: C-001 to C-009
 - `architecture.md`: context, solution strategy, building blocks, checks
 - `decisions/0001` to `0008`

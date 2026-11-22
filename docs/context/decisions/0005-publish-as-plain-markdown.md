@@ -9,10 +9,7 @@ decision-makers: andreouellet, hamed-minaee
 
 ## Context and Problem Statement
 
-`docs/context/` should appear in developer portals with the rest of a
-repository's documentation. Backstage TechDocs needs a `mkdocs.yml` and a
-`catalog-info.yaml` entry; Port reads Markdown files. OpenSpec's specs live
-outside `docs/`. How far should Conventional Context go?
+`docs/context/` should appear in developer portals with the rest of a repository's documentation. Backstage TechDocs needs a `mkdocs.yml` and a `catalog-info.yaml` entry; Port reads Markdown files. OpenSpec's specs live outside `docs/`. How far should Conventional Context go?
 
 ## Considered Options
 

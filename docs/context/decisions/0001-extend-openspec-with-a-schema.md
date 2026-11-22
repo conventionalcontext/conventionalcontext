@@ -9,10 +9,7 @@ decision-makers: andreouellet, hamed-minaee
 
 ## Context and Problem Statement
 
-Spec-driven development tools (OpenSpec, Spec Kit, Kiro) already record
-what a system should do, one change at a time. What they do not record well
-is the project's intent: who it is for, its rules, and the decisions behind
-it. How should Conventional Context add that?
+Spec-driven development tools (OpenSpec, Spec Kit, Kiro) already record what a system should do, one change at a time. What they do not record well is the project's intent: who it is for, its rules, and the decisions behind it. How should Conventional Context add that?
 
 ## Considered Options
 

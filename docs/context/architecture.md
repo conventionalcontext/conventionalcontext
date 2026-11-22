@@ -16,14 +16,9 @@ status: draft
 
 ## Main choices
 
-- A schema for OpenSpec, built on OpenSpec's own steps
-  ([0001](decisions/0001-extend-openspec-with-a-schema.md)).
-- Written for people, with GitOps keeping them in charge
-  ([0002](decisions/0002-human-agency-enforced-by-gitops.md)).
-- What the system does stays in OpenSpec
-  ([0003](decisions/0003-behavior-stays-in-openspec.md)), and
-  `docs/context/` is plain Markdown
-  ([0005](decisions/0005-publish-as-plain-markdown.md)).
+- A schema for OpenSpec, built on OpenSpec's own steps ([0001](decisions/0001-extend-openspec-with-a-schema.md)).
+- Written for people, with GitOps keeping them in charge ([0002](decisions/0002-human-agency-enforced-by-gitops.md)).
+- What the system does stays in OpenSpec ([0003](decisions/0003-behavior-stays-in-openspec.md)), and `docs/context/` is plain Markdown ([0005](decisions/0005-publish-as-plain-markdown.md)).
 
 ## Parts
 
@@ -37,9 +32,7 @@ status: draft
 | This project's intent | Written with its own schema | `docs/context/` |
 | This project's specs and changes | The schema lives in the same folder, so this repository uses what it publishes | `openspec/specs/`, `openspec/changes/` |
 
-Projects copy `openspec/schemas/conventional-context/` from a release into
-the same path and commit it
-([0006](decisions/0006-publish-schema-in-openspec-schemas.md)).
+Projects copy `openspec/schemas/conventional-context/` from a release into the same path and commit it ([0006](decisions/0006-publish-schema-in-openspec-schemas.md)).
 
 ## Checks before a pull request
 

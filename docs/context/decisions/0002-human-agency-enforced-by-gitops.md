@@ -9,10 +9,7 @@ decision-makers: andreouellet, hamed-minaee
 
 ## Context and Problem Statement
 
-AI coding agents can write most of a project's code. The risk for people is
-losing track of what is being built and why, and losing the say over it.
-What should Conventional Context promise, who is `docs/context/` for, and
-what makes the promise hold?
+AI coding agents can write most of a project's code. The risk for people is losing track of what is being built and why, and losing the say over it. What should Conventional Context promise, who is `docs/context/` for, and what makes the promise hold?
 
 ## Considered Options
 

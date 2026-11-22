@@ -2,9 +2,7 @@
 
 ## Purpose
 
-Defines what `docs/context/` contains and how it is written, so people and
-developer portals find the same files in every project, with nothing
-duplicated from OpenSpec.
+Defines what `docs/context/` contains and how it is written, so people and developer portals find the same files in every project, with nothing duplicated from OpenSpec.
 
 ## ADDED Requirements
 

@@ -9,9 +9,7 @@ decision-makers: andreouellet, hamed-minaee
 
 ## Context and Problem Statement
 
-OpenSpec keeps what a system does in `openspec/specs/`, and work in progress
-in `openspec/changes/`. If `docs/context/` also described features or
-behavior, the same facts would be written twice. What belongs where?
+OpenSpec keeps what a system does in `openspec/specs/`, and work in progress in `openspec/changes/`. If `docs/context/` also described features or behavior, the same facts would be written twice. What belongs where?
 
 ## Considered Options
 

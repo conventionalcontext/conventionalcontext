@@ -2,9 +2,7 @@
 
 ## Purpose
 
-Creates a project's `docs/context/` with the user, so people can review the
-project's intent before agents build: before any code is written in a new
-project, or before agents change an existing one.
+Creates a project's `docs/context/` with the user, so people can review the project's intent before agents build: before any code is written in a new project, or before agents change an existing one.
 
 ## ADDED Requirements
 

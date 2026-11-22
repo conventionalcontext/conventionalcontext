@@ -45,8 +45,7 @@ status: draft
 
 ## OpenSpec
 
-Definitions quoted from the
-[OpenSpec glossary](https://github.com/Fission-AI/OpenSpec/blob/main/docs/glossary.md).
+Definitions quoted from the [OpenSpec glossary](https://github.com/Fission-AI/OpenSpec/blob/main/docs/glossary.md).
 
 | Term | Meaning |
 |---|---|

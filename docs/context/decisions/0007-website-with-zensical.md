@@ -9,8 +9,7 @@ decision-makers: andreouellet, hamed-minaee
 
 ## Context and Problem Statement
 
-conventionalcontext.org should explain the project in a minute, the way
-conventionalcommits.org does.
+conventionalcontext.org should explain the project in a minute, the way conventionalcommits.org does.
 
 ## Considered Options
 

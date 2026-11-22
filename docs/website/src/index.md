@@ -7,15 +7,11 @@ hide:
 
 # Quick summary
 
-AI coding agents can now write most of a project's code. **Conventional
-Context** keeps the people behind the project in control. It records what
-the project is for, the rules it must follow, and the decisions behind it, in
-plain Markdown files that anyone can read and review.
+AI coding agents can now write most of a project's code. **Conventional Context** keeps the people behind the project in control. It records what the project is for, the rules it must follow, and the decisions behind it, in plain Markdown files that anyone can read and review.
 
 ## Why it matters
 
-When agents build a project, the reasons behind it often stay in one
-person's head, or in an agent's chat history that nobody else can see. Then:
+When agents build a project, the reasons behind it often stay in one person's head, or in an agent's chat history that nobody else can see. Then:
 
 - reviewers cannot check the plan before agents build, or the result after;
 - newcomers cannot learn why the project is the way it is;
@@ -23,8 +19,7 @@ person's head, or in an agent's chat history that nobody else can see. Then:
 
 ### Human agency
 
-Conventional Context supports **human agency**: people stay **aware** of what
-is being built and why, and **in charge** of what gets built.
+Conventional Context supports **human agency**: people stay **aware** of what is being built and why, and **in charge** of what gets built.
 
 | | What it means | How Conventional Context does it |
 |---|---|---|
@@ -32,13 +27,11 @@ is being built and why, and **in charge** of what gets built.
 | **In charge** | People decide; agents follow | You write the intent and review it before any code exists. When a change conflicts with a rule or decision, the agent stops and asks you. Agents never change the rules without a person's approval |
 | **Enforced by GitOps** | Nothing changes without a person's approval | Everything (code, specs, and `docs/context/`) lives in git. Every change arrives as a pull request, and a protected `main` branch lets nothing merge until a person has reviewed and approved it. Git's history shows who changed what, and why |
 
-The schema guides agents; the GitOps workflow is what keeps people in
-charge.
+The schema guides agents; the GitOps workflow is what keeps people in charge.
 
 ### Where it fits
 
-Building with AI agents goes through the same stages as any software
-project. Conventional Context covers the first one:
+Building with AI agents goes through the same stages as any software project. Conventional Context covers the first one:
 
 <ul class="cc-flow" aria-label="Stages of agentic development">
   <li class="cc-flow__here">Intent</li><li class="cc-flow__arrow">→</li>
@@ -57,23 +50,13 @@ project. Conventional Context covers the first one:
 | Build, Test | The code and its tests | An agent, reviewed by people |
 | Deploy | Ship it | Your CI/CD pipeline |
 
-Every later stage is checked against the first: before an agent writes a
-spec or a plan, it checks the change against your rules and decisions.
+Every later stage is checked against the first: before an agent writes a spec or a plan, it checks the change against your rules and decisions.
 
 ## How it works
 
-1. **Start.** The first change asks you about the project and writes
-   `docs/context/`. You review it before any code is written. On an
-   existing project, the agent first drafts what it can tell from the code,
-   and you confirm or correct it: nothing it guessed becomes a rule until
-   you do.
-2. **Every change after that.** The agent checks the change against your
-   rules and decisions. If they conflict, it asks you. Anything that will
-   still matter later (a new decision, rule, or term) is added to
-   `docs/context/` in the same pull request.
-3. **Publish.** `docs/context/` is plain Markdown in `docs/`, so your
-   documentation site or developer portal (such as Backstage) shows it with
-   the rest.
+1. **Start.** The first change asks you about the project and writes `docs/context/`. You review it before any code is written. On an existing project, the agent first drafts what it can tell from the code, and you confirm or correct it: nothing it guessed becomes a rule until you do.
+2. **Every change after that.** The agent checks the change against your rules and decisions. If they conflict, it asks you. Anything that will still matter later (a new decision, rule, or term) is added to `docs/context/` in the same pull request.
+3. **Publish.** `docs/context/` is plain Markdown in `docs/`, so your documentation site or developer portal (such as Backstage) shows it with the rest.
 
 [How it works, in detail](how-it-works.md)
 
@@ -95,8 +78,7 @@ What the system *does* stays in OpenSpec's specs. Nothing is written twice.
 
 Once `v0.1.0` is released:
 
-1. Install [OpenSpec](https://github.com/Fission-AI/OpenSpec) and run
-   `openspec init` in your repository.
+1. Install [OpenSpec](https://github.com/Fission-AI/OpenSpec) and run `openspec init` in your repository.
 2. Copy the schema into your repository and commit it:
 
     ```bash
@@ -107,31 +89,18 @@ Once `v0.1.0` is released:
     ```
 
 3. Set `schema: conventional-context` in `openspec/config.yaml`.
-4. Ask your agent to start, for example `/openspec-propose inception`, and
-   review `docs/context/` before anything is built.
+4. Ask your agent to start, for example `/openspec-propose inception`, and review `docs/context/` before anything is built.
 
 ## FAQ
 
 ??? question "Do agents read all of docs/context/?"
-    No. Studies found that giving agents general project overviews does not
-    improve their work and adds cost
-    ([Gloaguen et al., 2026](https://arxiv.org/abs/2602.11988)). So agents
-    read only your rules and decisions, and only when they plan a change.
-    The rest of `docs/context/` is written for people.
+    No. Studies found that giving agents general project overviews does not improve their work and adds cost ([Gloaguen et al., 2026](https://arxiv.org/abs/2602.11988)). So agents read only your rules and decisions, and only when they plan a change. The rest of `docs/context/` is written for people.
 
 ??? question "Do I need OpenSpec?"
-    Yes. Conventional Context adds to OpenSpec rather than replacing it.
-    Versions for other tools (Spec Kit, Kiro) are on the roadmap.
+    Yes. Conventional Context adds to OpenSpec rather than replacing it. Versions for other tools (Spec Kit, Kiro) are on the roadmap.
 
 ??? question "Can I use it on an existing project?"
-    Yes. The agent drafts what the code shows (how it is built, the
-    technology choices already made, the terms it uses) and marks each
-    choice as *proposed*. You confirm or correct each one, and add what the
-    code cannot show: who it is for, what is out of scope, and the rules it
-    must follow. Agents only follow decisions you have confirmed.
+    Yes. The agent drafts what the code shows (how it is built, the technology choices already made, the terms it uses) and marks each choice as *proposed*. You confirm or correct each one, and add what the code cannot show: who it is for, what is out of scope, and the rules it must follow. Agents only follow decisions you have confirmed.
 
 ??? question "Does it guarantee that agents follow the rules?"
-    Not on its own. Agents are instructed to check the rules and ask you
-    about conflicts. The guarantee comes from your GitOps workflow: agents
-    work in pull requests, and a protected `main` branch merges nothing a
-    person has not approved.
+    Not on its own. Agents are instructed to check the rules and ask you about conflicts. The guarantee comes from your GitOps workflow: agents work in pull requests, and a protected `main` branch merges nothing a person has not approved.

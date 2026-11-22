@@ -9,8 +9,7 @@ decision-makers: andreouellet, hamed-minaee
 
 ## Context and Problem Statement
 
-Projects copy the schema and templates into their own repositories. The
-schema text comes from OpenSpec, which uses the MIT license.
+Projects copy the schema and templates into their own repositories. The schema text comes from OpenSpec, which uses the MIT license.
 
 ## Considered Options
 

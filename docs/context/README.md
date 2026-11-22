@@ -4,14 +4,11 @@ type: index
 
 # Conventional Context
 
-Keep people aware and in charge of what AI agents build. Conventional
-Context is a schema for [OpenSpec](https://github.com/Fission-AI/OpenSpec)
-and a folder, `docs/context/`, where people write down a project's purpose,
-rules, and decisions. Agents check every change against them, and a GitOps
-workflow makes sure a person approves every change.
+Keep people aware and in charge of what AI agents build. 
 
-This folder is Conventional Context's own `docs/context/`, written with its
-own schema.
+Conventional Context is a schema for [OpenSpec](https://github.com/Fission-AI/OpenSpec) and a folder, `docs/context/`, where people write down a project's purpose, rules, and decisions. Agents check every change against them, and a GitOps workflow makes sure a person approves every change.
+
+This folder is Conventional Context's own `docs/context/`, written with its own schema.
 
 | File | What it tells you |
 |---|---|
@@ -22,14 +19,11 @@ own schema.
 | [glossary.md](glossary.md) | What its words mean |
 | [roadmap.md](roadmap.md) | Where it is heading |
 
-What the schema does is specified in
-[`openspec/specs/`](../../openspec/specs/); work in progress is in
-[`openspec/changes/`](../../openspec/changes/).
+What the schema does is specified in [`openspec/specs/`](../../openspec/specs/); work in progress is in [`openspec/changes/`](../../openspec/changes/).
 
 ## Decisions
 
-All decisions are `proposed` until the maintainers approve the first
-release.
+All decisions are `proposed` until the maintainers approve the first release.
 
 | # | Decision | Status |
 |---|---|---|
