@@ -1,101 +1,77 @@
 # Conventional Context
 
-**Write down what a project is for before agents build it, and keep it where
-people can read it.**
+**Keep people aware and in charge of what AI agents build.**
 
-Conventional Context is an [OpenSpec](https://github.com/Fission-AI/OpenSpec)
-schema and a small folder convention, `docs/context/`. When you start a new
-project, it helps you settle and record the project's requirements,
-constraints, architecture, and decisions. Then you let AI coding agents build
-it. As the project changes, it keeps that record current.
+AI coding agents can now write most of a project's code. Conventional Context
+keeps the people behind the project in control. It records what the project
+is for, the rules it must follow, and the decisions behind it, in plain
+Markdown files that anyone can read and review.
 
-> **Status:** early. The schema and templates are being written in this
-> repository and are not released yet. See the [changelog](CHANGELOG.md).
+> **Status:** early (0.x). Not released yet. See the [changelog](CHANGELOG.md).
 
 ## Why
 
-AI coding agents can build a working project from a few prompts. What they
-build is only as good as the intent behind it, and that intent usually lives
-in the creator's head or in an agent session that nobody else can see. That
-causes three problems:
+When agents build a project, the reasons behind it often stay in one
+person's head, or in an agent's chat history that nobody else can see. Then:
 
-- **Review.** A maintainer cannot check that the plan is right before agents
-  start building, or check the result against what was intended.
-- **Onboarding.** A new person cannot learn why the project is the way it is.
-- **Documentation.** An internal developer portal has nothing to show about
-  the project beyond its code.
+- reviewers cannot check the plan before agents build, or the result after;
+- newcomers cannot learn why the project is the way it is;
+- the project's documentation shows its code, but not its intent.
 
-Conventional Context puts that intent in `docs/context/`, as plain Markdown,
-written for people: maintainers, reviewers, newcomers, and the portal that
-publishes a repository's `docs/`.
+Conventional Context supports **human agency**: people stay **aware** of what
+is being built and why, and **in charge** of what gets built.
 
-It does **not** try to make agents better by giving them more to read.
-Studies of repository context files found that general overviews do not help
-agents and add cost
-([Gloaguen et al., 2026](https://arxiv.org/abs/2602.11988)). So agents are not
-told to read `docs/context/` for every task. The schema has them check
-constraints and decisions only when they plan a change, because those are
-project-specific rules that cannot be inferred from the code.
+- **Aware:** what the project is for, its rules, and its decisions are
+  written down where everyone can read them.
+- **In charge:** you write that down and review it before any code exists.
+  When a change conflicts with a rule or a decision, the agent stops and asks
+  you. Agents never change the rules without a person's approval.
+
+The schema guides agents; a **GitOps workflow** is what keeps people in
+charge. Everything (code, specs, and `docs/context/`) lives in git, every
+change arrives as a pull request, and a protected `main` branch lets nothing
+merge until a person has reviewed and approved it. Git's history then shows
+who changed what, and why.
 
 ## How it works
 
-OpenSpec already manages **what the system does**: one spec per capability in
-`openspec/specs/`, and one folder per change in `openspec/changes/`.
-Conventional Context adds **why, and within what limits**, without repeating
-anything OpenSpec keeps.
+Conventional Context adds to [OpenSpec](https://github.com/Fission-AI/OpenSpec),
+a popular tool for spec-driven development: you describe a change, an agent
+writes down what it will do and how, and then builds it.
 
-1. **Inception.** Your first OpenSpec change uses the `conventional-context`
-   schema. It asks about the project and writes `docs/context/`: purpose and
-   users, constraints, architecture, decisions, terms, and roadmap. You review
-   it before any code is written. The first behavior specs go to
-   `openspec/specs/` as usual.
-2. **Every later change.** The schema checks the change against
-   `constraints.md` and `decisions/` while planning. It adds to
-   `docs/context/` only what outlasts the change: a new decision, constraint,
-   or term, or a roadmap update.
-3. **Publishing.** `docs/context/` is plain Markdown, so a documentation site
-   or developer portal (for example Backstage TechDocs) can publish it with
-   the rest of `docs/`. See [examples/techdocs/](examples/techdocs/).
+1. **Start.** The first change asks you about the project and writes
+   `docs/context/`. You review it before any code is written.
+2. **Every change after that.** The agent checks the change against your
+   rules and decisions. If they conflict, it asks you. Anything that will
+   still matter later (a new decision, rule, or term) is added to
+   `docs/context/` in the same pull request.
+3. **Publish.** `docs/context/` is plain Markdown in `docs/`, so your
+   documentation site or developer portal (such as Backstage) shows it with
+   the rest. See [examples/techdocs/](examples/techdocs/).
 
-## What goes where
+## What is in docs/context/
 
-```text
-docs/context/
-  README.md          index: what the project is, and links to everything below
-  requirements.md    purpose, users, scope, quality requirements
-  constraints.md     rules the project must work within, and why
-  architecture.md    the main parts and how they fit together
-  decisions/         one record per significant decision (MADR)
-  glossary.md        terms with a project-specific meaning
-  roadmap.md         Now / Next / Later, linking to OpenSpec changes
-openspec/
-  specs/             what the system does: behavior, with scenarios (OpenSpec)
-  changes/           work in progress, one folder per change (OpenSpec)
-```
-
-| Question | Answered in |
+| File | What it tells you |
 |---|---|
-| Why does this project exist, and for whom? | `docs/context/requirements.md` |
-| What must always hold? | `docs/context/constraints.md` |
-| How is it built? | `docs/context/architecture.md` |
-| What was decided, and why? | `docs/context/decisions/` |
-| What does the system do? | `openspec/specs/` |
-| What is being changed right now? | `openspec/changes/` |
+| `README.md` | What the project is, and where to find the rest |
+| `requirements.md` | Why the project exists, who it is for, and how well it must work |
+| `constraints.md` | The rules it must follow, and why |
+| `architecture.md` | How it is built |
+| `decisions/` | What was decided, and why |
+| `glossary.md` | What its words mean |
+| `roadmap.md` | Where it is heading |
 
-Each fact is written once. `docs/context/` links to `openspec/specs/` instead
-of copying behavior. When a decision changes, its record is updated in place
-and the previous version moves to `decisions/archive/`, so `decisions/` shows
-only what holds today.
+What the system *does* stays in OpenSpec's specs (`openspec/specs/`).
+Nothing is written twice. This repository's own
+[`docs/context/`](docs/context/) is a complete example.
 
-## Getting started
+## Get started
 
-Not released yet. Once `v0.1.0` is tagged:
+Once `v0.1.0` is released:
 
-1. Install OpenSpec and run `openspec init` in your repository.
-2. Copy the schema folder, `openspec/schemas/conventional-context/`, from
-   this repository into the same path in yours, and commit it. It holds the
-   schema, its artifact templates, and the `docs/context/` templates
-   (`docs-context/`) that the first change fills in. From a release:
+1. Install [OpenSpec](https://github.com/Fission-AI/OpenSpec) and run
+   `openspec init` in your repository.
+2. Copy the schema into your repository and commit it:
 
    ```bash
    mkdir -p openspec/schemas && curl -fsSL \
@@ -104,18 +80,17 @@ Not released yet. Once `v0.1.0` is tagged:
        conventionalcontext-0.1.0/openspec/schemas/conventional-context
    ```
 
-   To try it on every project on your machine instead, put the same folder
-   in `~/.local/share/openspec/schemas/`. Committing it to the project is
-   better for teams and CI.
 3. Set `schema: conventional-context` in `openspec/config.yaml`.
-4. Ask your agent to propose the first change, for example
-   `/openspec-propose inception`, and review `docs/context/` before you build.
+4. Ask your agent to start, for example `/openspec-propose inception`, and
+   review `docs/context/` before anything is built.
+
+More on the website, [conventionalcontext.org](https://conventionalcontext.org).
 
 ## Contributing
 
-Issues and pull requests are welcome. See [AGENTS.md](AGENTS.md) for the
-conventions this repository follows.
+Issues and pull requests are welcome. See the
+[contribution guide](docs/website/src/contribute.md).
 
 ## License
 
-[MIT](LICENSE).
+[MIT](LICENSE)

@@ -15,3 +15,4 @@ status: current
 | C-006 | `docs/context/` is plain Markdown with minimal frontmatter; no portal-specific file is required. | It must work in any documentation site or developer portal ([0006](decisions/0006-publish-as-plain-markdown.md)). |
 | C-007 | Python tooling runs with `uv`, never `pip`. | The maintainers' setup; `pip` is not installed. |
 | C-008 | Changes reach `main` through a pull request approved by a maintainer other than its author. | Every change gets a second pair of eyes. |
+| C-009 | Agents never change constraints or decisions without a person's approval: such changes are planned as tasks and merged only through an approved pull request. | People stay in charge of the rules agents follow ([0010](decisions/0010-human-agency-enforced-by-gitops.md)). |

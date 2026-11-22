@@ -14,12 +14,12 @@
 
 ## 3. Context updates
 
-- [x] 3.1 `docs/context/README.md`: index and decisions table; verified by a row for each of 0001 to 0009
+- [x] 3.1 `docs/context/README.md`: index and decisions table; verified by a row for each of 0001 to 0010
 - [x] 3.2 `docs/context/requirements.md`: purpose, users and stakeholders, scope, NFR-001 to NFR-003; verified by its behavior section linking to `openspec/specs/`
-- [x] 3.3 `docs/context/constraints.md`: C-001 to C-008; verified by a reason for each
+- [x] 3.3 `docs/context/constraints.md`: C-001 to C-009; verified by a reason for each
 - [x] 3.4 `docs/context/architecture.md`: context, strategy, building blocks, distribution, checks; verified by the building blocks table
-- [x] 3.5 `docs/context/decisions/0001` to `0009`: verified by status `accepted` and decision-makers andreouellet and Hamed Minaee
-- [x] 3.6 `docs/context/glossary.md`: agents and context, Conventional Context, and OpenSpec terms quoted from OpenSpec's glossary; verified by the link to it
+- [x] 3.5 `docs/context/decisions/0001` to `0010`: verified by status `accepted` and decision-makers andreouellet and Hamed Minaee
+- [x] 3.6 `docs/context/glossary.md`: agents and context, human agency and review, Conventional Context, and OpenSpec terms quoted from OpenSpec's glossary; verified by the link to it
 - [x] 3.7 `docs/context/roadmap.md`: this change under Now; verified by the link to `openspec/changes/inception/`
 
 ## Workflow follow-up

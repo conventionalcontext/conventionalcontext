@@ -15,6 +15,9 @@ status: current
 
 ## Next
 
+- Existing projects: the agent drafts `docs/context/` from the existing code,
+  marks what it inferred as `proposed`, and asks people to confirm it
+
 - Test the schema with a fresh agent on a new project, in Claude Code,
   GitHub Copilot, and Google Antigravity
 - Check with OpenSpec in CI: `openspec schema validate` and a TechDocs build

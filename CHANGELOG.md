@@ -17,6 +17,11 @@ release. 1.0.0 comes when they are stable and used by real projects.
   agent routing through `AGENTS.md`, or feature files; OpenSpec manages
   behavior specs and changes.
 - License: MIT for the whole repository.
+- One-line description: "Keep people aware and in charge of what AI agents
+  build." Human agency is the core principle, enforced by a GitOps workflow
+  (decision 0010, constraint C-009).
+- README and website rewritten in plain language for readers new to
+  spec-driven development, AI agents, and OpenSpec.
 
 ### Added
 

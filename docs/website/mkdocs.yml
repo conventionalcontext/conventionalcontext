@@ -15,9 +15,8 @@
 
 site_name: Conventional Context
 site_description: >-
-  Write down what a project is for before agents build it, and keep it
-  where people can read it. An OpenSpec schema and the docs/context/
-  convention.
+  Keep people aware and in charge of what AI agents build. Requirements,
+  constraints, and decisions in docs/context/. An OpenSpec schema.
 site_url: https://conventionalcontext.org/
 repo_url: https://github.com/conventionalcontext/conventionalcontext
 repo_name: conventionalcontext/conventionalcontext

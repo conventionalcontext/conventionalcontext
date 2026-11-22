@@ -6,11 +6,11 @@ hide:
 
 # How it works
 
-Conventional Context is an OpenSpec schema named `conventional-context`. It
-is OpenSpec's default `spec-driven` workflow with one extra step, `context`,
-between the proposal and the specs:
+Conventional Context is a *schema* for [OpenSpec](https://github.com/Fission-AI/OpenSpec):
+a set of steps an agent follows for every change. It is OpenSpec's standard
+set of steps with one more, **context**, added after the proposal:
 
-<ul class="cc-flow" aria-label="Schema steps">
+<ul class="cc-flow" aria-label="Steps of a change">
   <li>proposal</li><li class="cc-flow__arrow">→</li>
   <li class="cc-flow__here">context</li><li class="cc-flow__arrow">→</li>
   <li>specs</li><li class="cc-flow__arrow">→</li>
@@ -18,63 +18,68 @@ between the proposal and the specs:
   <li>tasks</li>
 </ul>
 
-Every other step is OpenSpec's own, unchanged except for a few lines that
-connect it to `docs/context/`.
+| Step | What the agent writes |
+|---|---|
+| proposal | Why the change is needed, and what it changes |
+| **context** | **Which of your rules and decisions apply, and what the change adds to `docs/context/`** |
+| specs | What the system will do, with examples that can be tested |
+| design | How it will be built |
+| tasks | A checklist the agent works through |
 
-## Inception: the first change
+## The first change
 
-When `docs/context/` does not exist yet, the `context` step:
+When `docs/context/` does not exist yet, the context step:
 
 1. Copies the templates into `docs/context/`.
-2. Asks you, a few questions at a time, about users and stakeholders, scope,
-   measurable quality requirements, constraints and the reason for each, the
-   main architecture choices, and project-specific terms. It does not guess:
-   a wrong constraint is worse than a missing one.
-3. Fills in the files, and records each choice you have already made
-   (language, platform, hosting) as a decision.
-4. Links to `openspec/specs/` and to the change instead of restating
-   behavior.
-5. Asks you to review `docs/context/` before the specs, design, and tasks
-   are written.
+2. Asks you, a few questions at a time, who the project is for, what is in
+   and out of scope, how well it must work, which rules it must follow and
+   why, how it will be built, and which words have a special meaning. It
+   does not guess: a wrong rule is worse than a missing one.
+3. Writes your answers into the files, and records each choice you have
+   already made (language, platform, hosting) as a decision.
+4. Asks you to review `docs/context/` before anything is built.
 
-## Every later change
+## Every change after that
 
-When `docs/context/` exists, the `context` step:
+When `docs/context/` exists, the context step:
 
-1. Reads only `constraints.md`, the current decision records, and the
-   glossary terms the change uses.
-2. Lists, in the change's `context.md`, the constraints and decisions that
-   apply.
-3. Stops and asks you about any conflict: change the proposal, or change the
-   constraint or decision.
-4. Lists what outlasts the change. The tasks step turns each item into a task
-   in a final "Context updates" group, so the updates land in the same pull
-   request as the code, and are reviewed with it.
+1. Reads only your rules (`constraints.md`) and decisions (`decisions/`).
+2. Lists which of them apply to the change.
+3. Stops and asks you if the change conflicts with one: change the plan, or
+   change the rule.
+4. Lists what the change adds that will still matter later: a decision, a
+   rule, a term. Each becomes a task, so it lands in the same pull request as
+   the code.
 
-In the design step, a decision that will guide future changes is marked
-"(record)" and becomes a decision record. Decisions that only matter for one
-change stay in that change's `design.md`.
+## Pull requests keep people in charge
 
-## Decision records
+The schema guides agents. Your **GitOps workflow** is what makes sure a
+person approves every change, to the code and to `docs/context/`:
 
-Decisions use [MADR 4](https://adr.github.io/madr/), one file per decision in
-`docs/context/decisions/`. When a decision changes:
+- Agents work on a branch and open a pull request. They never change `main`
+  directly.
+- A protected `main` branch merges nothing until a person has approved it.
+- Git's history records who changed what, and why.
 
-1. The current file moves, unchanged and with status `superseded`, to
-   `decisions/archive/NNNN-title-YYYY-MM-DD.md`.
-2. The original file is updated in place, so links to it keep working.
-3. It lists the archived version under `## Previous decisions`.
+Settings to turn on for `main` (GitHub calls this a *ruleset* or *branch
+protection*; other hosts have the same idea):
 
-`decisions/` then shows only what holds today, which is what a reader in a
-developer portal needs.
+| Setting | Why |
+|---|---|
+| Require a pull request before merging | Nothing reaches `main` without review |
+| Require at least one approval, from someone other than the author | An agent, or the person running it, cannot approve its own work |
+| Require review from code owners (a `CODEOWNERS` file) | The right people approve changes to `docs/context/` |
+| Block force pushes and deletion | History cannot be rewritten |
+
+## Decisions
+
+Each decision is one file in `docs/context/decisions/`. When a decision
+changes, the old version moves to `decisions/archive/` and the file is
+updated in place. So `decisions/` always shows what holds today, and earlier
+versions are one click away.
 
 ## Publishing
 
-`docs/context/` is plain Markdown with a few lines of YAML frontmatter
-(`type`, `status`). Any documentation site or portal can publish it.
-
-For Backstage TechDocs, the repository has an
-[example](https://github.com/conventionalcontext/conventionalcontext/tree/main/examples/techdocs):
-a minimal `mkdocs.yml` and the `catalog-info.yaml` annotation. Links from
-`docs/context/` into `openspec/` point readers to the repository, so nothing
-is copied.
+`docs/context/` is plain Markdown in `docs/`, so any documentation site or
+developer portal can show it. For Backstage, the repository has an
+[example](https://github.com/conventionalcontext/conventionalcontext/tree/main/examples/techdocs).

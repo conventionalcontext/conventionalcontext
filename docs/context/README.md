@@ -4,11 +4,11 @@ type: index
 
 # Conventional Context
 
-An [OpenSpec](https://github.com/Fission-AI/OpenSpec) schema and the
-`docs/context/` convention. It helps people settle a new project's intent
-(purpose, scope, constraints, architecture, decisions) before AI coding agents
-build it, and keeps that intent current and readable for maintainers,
-reviewers, newcomers, and developer portals.
+Keep people aware and in charge of what AI agents build. An
+[OpenSpec](https://github.com/Fission-AI/OpenSpec) schema and the
+`docs/context/` convention: people write down a project's purpose, rules, and
+decisions, agents check every change against them, and a GitOps workflow
+makes sure a person approves every change.
 
 ## Contents
 
@@ -38,3 +38,4 @@ What the schema does, capability by capability, is in
 | [0007](decisions/0007-website-with-zensical.md) | Website with Zensical on GitHub Pages | accepted |
 | [0008](decisions/0008-mit-license.md) | MIT license for the whole repository | accepted |
 | [0009](decisions/0009-publish-schema-in-openspec-schemas.md) | Publish the schema at openspec/schemas/conventional-context/; adopters copy it | accepted |
+| [0010](decisions/0010-human-agency-enforced-by-gitops.md) | Human agency as the core principle, enforced by a GitOps workflow | accepted |

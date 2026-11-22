@@ -7,13 +7,16 @@ status: current
 
 ## Purpose
 
-AI coding agents can build a working project from a few prompts, but what
-they build is only as good as the intent behind it, and that intent usually
-stays in the creator's head or in an agent session no one else can see.
-Conventional Context helps people settle a new project's intent before
-agents build it, and keeps it current and readable for maintainers,
-reviewers, newcomers, and developer portals. It works as an OpenSpec schema
-and adds what OpenSpec does not keep, without repeating what it does.
+Keep people aware and in charge of what AI agents build. AI coding agents
+can write most of a project's code, but the intent behind it usually stays
+in one person's head or in an agent session no one else can see.
+Conventional Context supports human agency: people write the project's
+intent down and review it before agents build, agents check every change
+against it and ask when there is a conflict, and a GitOps workflow makes
+sure a person approves every change. The record stays readable for
+maintainers, reviewers, newcomers, and developer portals. It works as an
+OpenSpec schema and adds what OpenSpec does not keep, without repeating what
+it does ([0010](decisions/0010-human-agency-enforced-by-gitops.md)).
 
 ## Users and stakeholders
 

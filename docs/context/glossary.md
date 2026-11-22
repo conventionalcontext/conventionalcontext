@@ -20,6 +20,20 @@ Terms marked *(OpenSpec)* use OpenSpec's definitions, quoted from the
 | Intent | Why a project exists, for whom, what it must and must not do, the rules it works within, and the decisions behind it. The first stage of agentic development. In this project, recorded in `docs/context/`. |
 | Spec-driven development | Writing down what a feature or change should do before agents plan, build, and test it. OpenSpec, Spec Kit, and Kiro are spec-driven development tools. |
 
+## Human agency and review
+
+| Term | Meaning |
+|---|---|
+| Human agency | People staying **aware** of what is being built and why, and **in charge** of what gets built, while AI agents do much of the work. The core principle of Conventional Context ([0010](decisions/0010-human-agency-enforced-by-gitops.md)). |
+| Human oversight | People being able to understand, check, and correct what an AI system does. The EU's Ethics Guidelines for Trustworthy AI pair it with human agency as their first requirement. |
+| Human in the loop | A way of working where a person must review and approve at set points before an agent's work goes further. In Conventional Context: reviewing `docs/context/` before anything is built, answering conflicts, and approving pull requests. |
+| Review gate | A point where work stops until a person has reviewed it. |
+| Automation bias | Trusting an automated system's output without checking it properly; in practice, approving agents' pull requests without really reading them. The main risk to human agency. |
+| GitOps workflow | Working through git: everything (code, specs, documentation, and `docs/context/`) lives in a repository, every change arrives as a pull request, and nothing merges until a person approves it. Git's history records who changed what, and why. The term comes from infrastructure operations; here it means the same discipline applied to every change. |
+| Pull request | A proposed change on a branch, which people review, discuss, and approve before it is merged. Called a merge request on GitLab. |
+| Protected branch | A branch, usually `main`, with rules that block direct pushes and require approved pull requests. GitHub calls a set of such rules a *ruleset*. |
+| Code owners | The people or teams who must approve changes to certain files, listed in a `CODEOWNERS` file. |
+
 ## Conventional Context
 
 | Term | Meaning |
