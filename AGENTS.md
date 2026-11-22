@@ -5,7 +5,7 @@ Instructions for AI coding agents working on this repository.
 - `schema/conventional-context/` is an OpenSpec schema. Follow OpenSpec's
   schema format (`schema.yaml` with `artifacts`, each with `id`,
   `generates`, `template`, `instruction`, `requires`). Do not invent fields.
-- `templates/docs/context/` holds blank files that adopters fill in. Keep
+- `schema/conventional-context/docs-context/` holds blank files that adopters fill in. Keep
   them blank: structure and short guidance, never this project's content.
 - Never duplicate what OpenSpec manages. Behavior belongs in
   `openspec/specs/`; `docs/context/` links to it.
