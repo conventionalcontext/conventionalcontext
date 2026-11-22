@@ -1,0 +1,130 @@
+/* Conventional Context colours, taken from the logo (#029CFD).
+   Hero gradient: deep blue -> blue -> teal; white text stays readable on all of it. */
+:root {
+  --cc-deep: #0a3d7a;
+  --cc-blue: #0277c9;
+  --cc-teal: #0e9aa7;
+  --cc-logo: #029cfd;
+
+  --md-primary-fg-color: var(--cc-deep);
+  --md-primary-fg-color--light: var(--cc-blue);
+  --md-primary-fg-color--dark: #072c59;
+  --md-accent-fg-color: var(--cc-teal);
+}
+
+[data-md-color-scheme="slate"] {
+  --md-primary-fg-color: #0b2f5c;
+  --md-accent-fg-color: #3cc4cf;
+  --md-typeset-a-color: #5ab8ff;
+}
+
+/* ---------- Home hero ---------- */
+.cc-hero {
+  background: linear-gradient(135deg, var(--cc-deep) 0%, var(--cc-blue) 55%, var(--cc-teal) 100%);
+  color: #fff;
+}
+
+.cc-hero__inner {
+  padding: 5rem 1rem 4.5rem;
+}
+
+.cc-hero__title {
+  margin: 0 0 0.75rem;
+  font-size: clamp(2rem, 5vw, 2.8rem); /* max 56px, near conventionalcommits.org (57.6px) and github.blog (48px) */
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  color: #fff;
+}
+
+.cc-hero__slug {
+  max-width: 44rem;
+  margin: 0 0 2.5rem;
+  font-size: clamp(0.9rem, 1.8vw, 1rem); /* max 20px */
+  line-height: 1.5;
+}
+
+.cc-hero__buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.cc-button {
+  display: inline-block;
+  padding: 0.7rem 1.6rem;
+  border: 2px solid #fff;
+  border-radius: 999px;
+  color: #fff !important;
+  font-size: 0.95rem;
+  font-weight: 500;
+  transition: background-color 120ms, color 120ms;
+}
+
+.cc-button:hover,
+.cc-button:focus-visible {
+  background: #fff;
+  color: var(--cc-deep) !important;
+}
+
+/* ---------- Agentic SDLC strip ---------- */
+.md-typeset ul.cc-flow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  align-items: center;
+  margin: 1.2rem 0 1.5rem;
+  padding: 0;
+  list-style: none;
+}
+
+.md-typeset ul.cc-flow li {
+  display: inline-block;
+  margin: 0;
+  padding: 0.35rem 0.85rem;
+  border: 1px solid var(--md-default-fg-color--lighter);
+  border-radius: 999px;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.md-typeset ul.cc-flow li.cc-flow__here {
+  border-color: var(--cc-blue);
+  background: var(--cc-blue);
+  color: #fff;
+}
+
+.md-typeset ul.cc-flow li.cc-flow__arrow {
+  border: none;
+  padding: 0;
+  color: var(--md-default-fg-color--light);
+}
+
+/* Keep file names on one line in tables. */
+.md-typeset td code {
+  white-space: nowrap;
+}
+
+@media screen and (max-width: 44.9375em) {
+  .cc-hero__inner {
+    padding: 3rem 1rem;
+  }
+}
+
+/* ---------- Section titles ----------
+   Bold headings sized like github.blog articles (h1 36px, h2 32px, h3 28px,
+   h4 24px over 18px body text, weight 700, line-height 1.25), kept in the
+   same proportion to this site's 16px body text. Colours are unchanged. */
+.md-typeset h1,
+.md-typeset h2,
+.md-typeset h3,
+.md-typeset h4 {
+  font-weight: 700;
+  line-height: 1.25;
+  letter-spacing: -0.01em;
+}
+
+.md-typeset h1 { font-size: 2em; }
+.md-typeset h2 { font-size: 1.78em; }
+.md-typeset h3 { font-size: 1.56em; }
+.md-typeset h4 { font-size: 1.33em; }

@@ -30,3 +30,7 @@ Notable changes to Conventional Context. The format follows
 - `examples/techdocs/`: a minimal `mkdocs.yml` and `catalog-info.yaml` for
   publishing `docs/context/` with Backstage TechDocs, tested with
   `mkdocs-techdocs-core`.
+- Website for conventionalcontext.org in `docs/website/` (Zensical, the
+  blue-to-teal theme from the earlier version): quick summary, how it works,
+  and contribute pages, with `.github/workflows/website.yml` to build it and
+  deploy it to GitHub Pages.

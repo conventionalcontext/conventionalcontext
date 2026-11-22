@@ -216,3 +216,7 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# Website build output and Zensical cache
+docs/website/site/
+docs/website/.cache/

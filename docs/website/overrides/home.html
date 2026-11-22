@@ -1,0 +1,20 @@
+{% extends "main.html" %}
+
+{#- Full-width hero for the home page, in the spirit of conventionalcommits.org. -#}
+{% block tabs %}
+  {{ super() }}
+  <section class="cc-hero">
+    <div class="cc-hero__inner md-grid">
+      <h1 class="cc-hero__title">Conventional Context</h1>
+      <p class="cc-hero__slug">
+        Write down what a project is for before agents build it,
+        and keep it where people can read it.
+      </p>
+      <nav class="cc-hero__buttons" aria-label="Main sections">
+        <a class="cc-button" href="#quick-summary">Quick Summary</a>
+        <a class="cc-button" href="{{ 'how-it-works/' | url }}">How it works</a>
+        <a class="cc-button" href="{{ 'contribute/' | url }}">Contribute</a>
+      </nav>
+    </div>
+  </section>
+{% endblock %}
