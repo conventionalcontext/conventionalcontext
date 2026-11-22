@@ -72,7 +72,7 @@ artifacts:
       Decide the mode first:
 
       **Inception** - `docs/context/README.md` does not exist.
-      1. Copy the blank files from the schema's `docs-context/` folder
+      1. Copy the templates from the schema's `docs-context/` folder
          (`openspec/schemas/conventional-context/docs-context/`) into
          `docs/context/`, keeping the same names. Keep the frontmatter.
       2. Ask the user what you need to fill them in: users and stakeholders,

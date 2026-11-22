@@ -94,7 +94,7 @@ Not released yet. The intended setup:
 1. Install OpenSpec and run `openspec init` in your repository.
 2. Copy `schema/conventional-context/` from this repository into
    `openspec/schemas/conventional-context/`. It holds the schema, its
-   artifact templates, and the blank `docs/context/` files (`docs-context/`)
+   artifact templates, and the `docs/context/` templates (`docs-context/`)
    that the first change fills in.
 3. Set `schema: conventional-context` in `openspec/config.yaml`.
 4. Ask your agent to propose the first change, for example
