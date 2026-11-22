@@ -7,9 +7,13 @@ decision-makers: andreouellet, hamed-minaee
 
 # Extend OpenSpec with a schema
 
-## Context and Problem Statement
+## Context
 
-Spec-driven development tools (OpenSpec, Spec Kit, Kiro) already record what a system should do, one change at a time. What they do not record well is the project's intent: who it is for, its rules, and the decisions behind it. How should Conventional Context add that?
+Spec-driven development tools, such as OpenSpec, Spec Kit, and Kiro, have an agent write down what a system should do before it builds it, one change at a time. They record behavior well. What they do not record well is the project's intent: who it is for, the rules it must follow, and the decisions behind it. That intent often stays in one person's head, or in an agent's chat history that nobody else can see.
+
+## Problem Statement
+
+How should Conventional Context add that intent? It could be a standalone specification, a fork of an existing tool, or an extension of one. Whatever it is should not ask teams to adopt yet another tool, and should not duplicate what these tools already do.
 
 ## Considered Options
 

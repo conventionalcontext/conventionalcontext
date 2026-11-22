@@ -10,14 +10,19 @@ Statuses: proposed, accepted, rejected, deprecated. When a decision changes,
 move the current file unchanged (status: superseded) to
 archive/NNNN-title-YYYY-MM-DD.md, update this file in place, and list the
 archived version under "Previous decisions". Format: MADR 4
-(https://adr.github.io/madr/). -->
+(https://adr.github.io/madr/), with its "Context and Problem Statement"
+split into two sections. -->
 
 # Short title of the decision
 
-## Context and Problem Statement
+## Context
 
-<!-- The situation and the question being decided, in two or three
-sentences. -->
+<!-- The situation and the facts that matter, in up to four sentences. -->
+
+## Problem Statement
+
+<!-- The question being decided, and what a good answer must do, in up
+to four sentences. -->
 
 ## Considered Options
 

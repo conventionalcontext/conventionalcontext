@@ -7,9 +7,13 @@ decision-makers: andreouellet, hamed-minaee
 
 # MIT license
 
-## Context and Problem Statement
+## Context
 
-Projects copy the schema and templates into their own repositories. The schema text comes from OpenSpec, which uses the MIT license.
+Projects copy the schema and templates into their own repositories, and may change them. The schema text comes from OpenSpec, which uses the MIT license, and is kept unchanged.
+
+## Problem Statement
+
+Which license, or licenses, should cover this repository? The license should let projects copy and change the files freely, and be compatible with OpenSpec's. A different license per folder is possible, but harder to apply and explain.
 
 ## Considered Options
 

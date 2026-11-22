@@ -7,9 +7,13 @@ decision-makers: andreouellet, hamed-minaee
 
 # Website with Zensical on GitHub Pages
 
-## Context and Problem Statement
+## Context
 
-conventionalcontext.org should explain the project in a minute, the way conventionalcommits.org does.
+The project needs a short page to share, beyond the README, at https://conventionalcontext.org. Sites such as conventionalcommits.org explain their convention in a minute, on one page. This repository runs Python tooling with `uv`, never `pip`.
+
+## Problem Statement
+
+Should Conventional Context have a website, and if so, what should build and host it? It should explain the project in a minute, be built from Markdown in this repository, and cost nothing to host.
 
 ## Considered Options
 

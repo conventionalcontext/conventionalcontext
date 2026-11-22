@@ -7,9 +7,13 @@ decision-makers: andreouellet, hamed-minaee
 
 # Publish docs/context/ as plain Markdown
 
-## Context and Problem Statement
+## Context
 
-`docs/context/` should appear in developer portals with the rest of a repository's documentation. Backstage TechDocs needs a `mkdocs.yml` and a `catalog-info.yaml` entry; Port reads Markdown files. OpenSpec's specs live outside `docs/`. How far should Conventional Context go?
+Teams often publish documentation in a developer portal, such as Backstage or Port, next to the rest of a repository's documentation. Backstage TechDocs needs a `mkdocs.yml` and a `catalog-info.yaml` entry; Port reads Markdown files. OpenSpec's specs live outside `docs/`, in `openspec/specs/`.
+
+## Problem Statement
+
+`docs/context/` should appear in these portals with little extra work. How far should Conventional Context go: plain Markdown only, files for each portal, or copies of OpenSpec's specs in the published documentation? Every portal-specific file is one more file each project must maintain.
 
 ## Considered Options
 

@@ -7,9 +7,13 @@ decision-makers: andreouellet, hamed-minaee
 
 # Decision records, with an archive for earlier versions
 
-## Context and Problem Statement
+## Context
 
-Decision records are read by people who want to know what holds today. The usual practice (records never change; a new record replaces an old one) makes readers follow chains of links. How should a changed decision be recorded?
+Decision records explain what was decided, and why. They are read by people who want to know what holds today: reviewers, newcomers, and agents planning a change. The usual practice is that records never change: a new record replaces an old one, and the old one is marked superseded.
+
+## Problem Statement
+
+That practice makes readers follow chains of links to find what holds today, and the folder fills with records that no longer apply. Editing a record in place keeps it current, but hides the earlier version in git history. How should a changed decision be recorded, so that current decisions are easy to find and earlier ones are not lost?
 
 ## Considered Options
 

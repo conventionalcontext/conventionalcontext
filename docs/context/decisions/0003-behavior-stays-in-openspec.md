@@ -7,9 +7,13 @@ decision-makers: andreouellet, hamed-minaee
 
 # What the system does stays in OpenSpec
 
-## Context and Problem Statement
+## Context
 
-OpenSpec keeps what a system does in `openspec/specs/`, and work in progress in `openspec/changes/`. If `docs/context/` also described features or behavior, the same facts would be written twice. What belongs where?
+OpenSpec keeps what a system does in `openspec/specs/`, and work in progress in `openspec/changes/`. When a change is finished, OpenSpec merges its specs into `openspec/specs/`, so they stay current. Many documentation conventions also have a section for features or functional requirements.
+
+## Problem Statement
+
+If `docs/context/` also described features or behavior, the same facts would be written twice, and the two copies would drift apart. What belongs in `docs/context/`, and what stays in OpenSpec?
 
 ## Considered Options
 

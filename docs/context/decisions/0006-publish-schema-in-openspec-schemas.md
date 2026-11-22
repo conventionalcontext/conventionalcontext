@@ -7,9 +7,13 @@ decision-makers: andreouellet, hamed-minaee
 
 # Publish the schema where OpenSpec looks for it
 
-## Context and Problem Statement
+## Context
 
-OpenSpec finds a custom schema in a project's `openspec/schemas/<name>/`. It has no command to install a schema from the internet. Where should the schema live, and how do other projects get it?
+OpenSpec finds a custom schema in a project's `openspec/schemas/<name>/`, or in a per-user folder, `~/.local/share/openspec/schemas/`. It has no command to install a schema from the internet. This repository both publishes the schema and uses it for its own changes.
+
+## Problem Statement
+
+Where should the schema live in this repository, and how do other projects get it? The answer should work the same for everyone on a team and in CI, and let each project choose when to upgrade.
 
 ## Considered Options
 

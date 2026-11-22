@@ -87,7 +87,7 @@ artifacts:
            strategy;
          - one decision record per significant technology choice already
            made (language, frameworks, data stores, hosting, CI), with
-           status `proposed` and, under Context and Problem Statement,
+           status `proposed` and, under Context,
            "Inferred from the code. Reason not recorded; to confirm.";
          - in `glossary.md`: terms the code and docs use with a specific
            meaning;

@@ -12,7 +12,7 @@ status: draft
 | OpenSpec | Loads the schema from a project's `openspec/schemas/` and gives its instructions to the agent |
 | AI coding agents (Claude Code, GitHub Copilot, Google Antigravity, ...) | Follow the schema's instructions |
 | Developer portals (Backstage, Port) | Publish a project's `docs/`, including `docs/context/` |
-| GitHub Pages | Hosts conventionalcontext.org |
+| GitHub Pages | Hosts https://conventionalcontext.org |
 
 ## Main choices
 
