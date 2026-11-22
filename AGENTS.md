@@ -9,8 +9,22 @@ constraints, architecture, decisions, roadmap) lives in `docs/context/`.
 Read `docs/context/README.md` first, then the files it points to that are
 relevant to your task, before changing anything.
 
-`docs/context/` is being written. Where it does not yet cover something,
-ask rather than guess.
+Where `docs/context/` does not cover something, ask rather than guess.
+
+## Conventions
+
+Choices that affect how context files are written in this repository. Follow
+them when you create or edit files in `docs/context/`.
+
+- Diagrams: none. Describe structure with tables and directory trees.
+- Requirement keywords: BCP 14 (MUST, SHOULD, MAY) in uppercase.
+- Requirements and scenarios: the format in
+  `docs/context/decisions/0007-requirement-format.md`.
+- Decision records: MADR 4, numbered `NNNN-title-in-kebab-case.md`. To
+  change a decision, first move its current file unchanged (status
+  `superseded`) to `decisions/archive/NNNN-title-YYYY-MM-DD.md`, then update
+  it in place and list the archived version under `## Previous decisions`
+  (`docs/context/decisions/0015-archive-previous-decisions.md`).
 
 ## What each directory is
 
@@ -23,6 +37,7 @@ ask rather than guess.
 | `examples/` | Filled-in examples | |
 | `tools/` | Optional scaffold script and linter | |
 | `docs/context/` | This project's own intent | Real content, not a template. Do not copy it into `templates/`. |
+| `docs/website/` | The conventionalcontext.org website (Zensical) | Explains the specification; never adds rules of its own. Keep it consistent with `README.md`. Check with `uv run --no-project --with-requirements docs/website/requirements.txt zensical build --strict -f docs/website/mkdocs.yml`. Use `uv`, never `pip`. |
 
 ## Working rules
 

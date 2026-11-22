@@ -1,0 +1,87 @@
+# Configuration for the conventionalcontext.org website, built with Zensical
+# (https://zensical.org). Zensical reads this mkdocs.yml directly, so the file
+# keeps its MkDocs name and format; `theme.name: material` is how Zensical
+# selects its Material-compatible theme.
+#
+# Build locally (from the repository root):
+#   Uses uv (https://docs.astral.sh/uv/); nothing to install first.
+#   uv run --no-project --with-requirements docs/website/requirements.txt \
+#     zensical serve -f docs/website/mkdocs.yml   # preview at http://127.0.0.1:8000
+#   uv run --no-project --with-requirements docs/website/requirements.txt \
+#     zensical build -f docs/website/mkdocs.yml   # static site in docs/website/site/
+#
+# Published to GitHub Pages by .github/workflows/website.yml on push to main.
+# See docs/context/decisions/0016-project-website.md.
+
+site_name: Conventional Context
+site_description: >-
+  A specification for putting a project's intent in its repository,
+  where people and AI agents can read it.
+site_url: https://conventionalcontext.org/
+repo_url: https://github.com/conventionalcontext/conventionalcontext
+repo_name: conventionalcontext/conventionalcontext
+edit_uri: edit/main/docs/website/src/
+copyright: >-
+  Specification CC-BY-4.0 · Templates CC0-1.0 · Everything else Apache-2.0
+  (<a href="https://github.com/conventionalcontext/conventionalcontext#license">details</a>)
+
+docs_dir: src
+site_dir: site
+
+theme:
+  name: material
+  custom_dir: overrides
+  variant: classic
+  logo: assets/logo.svg
+  favicon: assets/logo.svg
+  font:
+    text: Inter
+    code: JetBrains Mono
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: custom
+      accent: custom
+      toggle:
+        icon: material/weather-night
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: custom
+      accent: custom
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to light mode
+  features:
+    - navigation.tabs
+    - navigation.top
+    - navigation.footer
+    - toc.follow
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+
+extra_css:
+  - stylesheets/extra.css
+
+plugins:
+  - search
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - md_in_html
+  - tables
+  - toc:
+      permalink: true
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.highlight
+  - pymdownx.inlinehilite
+  - pymdownx.tabbed:
+      alternate_style: true
+
+nav:
+  - Quick Summary: index.md
+  - Specification: specification.md
+  - Contribute: contribute.md

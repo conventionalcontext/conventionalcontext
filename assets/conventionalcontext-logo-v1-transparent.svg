@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1200" viewBox="0 0 1200 1200" role="img" aria-labelledby="title desc">
+  <title id="title">conventionalcontext v1.0 icon</title>
+  <desc id="desc">Transparent vector logo combining a 13-circle hexahedron lattice, outer SDK cube, inner context cube, and six incoming context data paths.</desc>
+
+  <!-- v1.0 palette, sampled from the approved raster version -->
+  <defs>
+    <style>
+      .outer-cube { fill: none; stroke: #029CFD; stroke-width: 24; stroke-linejoin: round; }
+      .cube-edge { fill: none; stroke: #FFFFFF; stroke-width: 14; stroke-linecap: round; stroke-linejoin: round; }
+      .data-path { fill: none; stroke: #FFFFFF; stroke-width: 14; stroke-linecap: round; stroke-linejoin: round; }
+    </style>
+  </defs>
+
+  <!-- 12 visible circles of the 13-circle hexahedron lattice.
+       The central circle is fully covered by the inner cube. -->
+  <g id="hexahedron-circles">
+    <!-- Yellow -->
+    <circle cx="600" cy="200" r="100" fill="#F7C517"/>
+    <circle cx="600" cy="400" r="100" fill="#F7C517"/>
+
+    <!-- Magenta -->
+    <circle cx="946.410" cy="400" r="100" fill="#ED329F"/>
+    <circle cx="773.205" cy="500" r="100" fill="#ED329F"/>
+
+    <!-- Cyan -->
+    <circle cx="946.410" cy="800" r="100" fill="#15D9D7"/>
+    <circle cx="773.205" cy="700" r="100" fill="#15D9D7"/>
+
+    <!-- Green -->
+    <circle cx="600" cy="1000" r="100" fill="#6DC62C"/>
+    <circle cx="600" cy="800" r="100" fill="#6DC62C"/>
+
+    <!-- Violet -->
+    <circle cx="253.590" cy="800" r="100" fill="#6C81FC"/>
+    <circle cx="426.795" cy="700" r="100" fill="#6C81FC"/>
+
+    <!-- Orange -->
+    <circle cx="253.590" cy="400" r="100" fill="#FA630B"/>
+    <circle cx="426.795" cy="500" r="100" fill="#FA630B"/>
+  </g>
+
+  <!-- Outer SDK cube / structure -->
+  <polygon class="outer-cube" points="600,225 924.760,412.5 924.760,787.5 600,975 275.240,787.5 275.240,412.5"/>
+
+  <!-- Inner curated-context cube -->
+  <g id="inner-cube">
+    <polygon points="600,450 735,528 600,606 465,528" fill="#029CFD"/>
+    <polygon points="465,528 600,606 600,762 465,684" fill="#029CFD"/>
+    <polygon points="600,606 735,528 735,684 600,762" fill="#029CFD"/>
+
+    <!-- clean white cube seams -->
+    <path class="cube-edge" d="M600 450 L735 528 L735 684 L600 762 L465 684 L465 528 Z"/>
+    <path class="cube-edge" d="M465 528 L600 606 L735 528"/>
+    <path class="cube-edge" d="M600 606 L600 762"/>
+  </g>
+
+  <!-- Six context/data inputs; dots sit toward the outward side of each outer circle. -->
+  <g id="context-data-inputs">
+    <!-- top -->
+    <path class="data-path" d="M600 140 L600 450"/>
+    <circle cx="600" cy="140" r="28" fill="#FFFFFF"/>
+
+    <!-- upper right -->
+    <path class="data-path" d="M998.372 370 L735 528"/>
+    <circle cx="998.372" cy="370" r="28" fill="#FFFFFF"/>
+
+    <!-- lower right -->
+    <path class="data-path" d="M998.372 830 L735 684"/>
+    <circle cx="998.372" cy="830" r="28" fill="#FFFFFF"/>
+
+    <!-- bottom -->
+    <path class="data-path" d="M600 1060 L600 762"/>
+    <circle cx="600" cy="1060" r="28" fill="#FFFFFF"/>
+
+    <!-- lower left -->
+    <path class="data-path" d="M201.628 830 L465 684"/>
+    <circle cx="201.628" cy="830" r="28" fill="#FFFFFF"/>
+
+    <!-- upper left -->
+    <path class="data-path" d="M201.628 370 L465 528"/>
+    <circle cx="201.628" cy="370" r="28" fill="#FFFFFF"/>
+  </g>
+</svg>
