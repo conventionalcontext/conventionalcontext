@@ -18,3 +18,6 @@ Notable changes to Conventional Context. The format follows
 ### Added
 
 - README describing the new direction.
+- Blank `docs/context/` templates in `templates/docs/context/`: index,
+  requirements, constraints, architecture, glossary, roadmap, and a MADR 4
+  decision template.
